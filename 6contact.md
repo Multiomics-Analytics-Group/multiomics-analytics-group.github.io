@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Contact
+permalink: /contact/
 ---
 
-# Contact page
+# Address
 
-This is a test thank you markdown
+# Map

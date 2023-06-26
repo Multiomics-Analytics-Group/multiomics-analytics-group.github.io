@@ -19,7 +19,10 @@
  *
  * Global resets
  * Sidebar
- * Container
+ * Top Menu
+ * Container (Content)
+ * Footer
+ * Images
  * Reverse layout
  * Themes
  */
@@ -34,9 +37,10 @@
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
+
 @media (min-width: 48em) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 @media (min-width: 58em) {
@@ -54,10 +58,43 @@ html {
  */
 
 .sidebar {
+  z-index: 999;
   text-align: center;
   padding: 2rem 1rem;
-  color: rgba(255,255,255);
-  background: rgb(134,184,212);
+  color: white;
+  background-color: rgb(134,184,212);
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: white;
+}
+
+/* About section */
+.sidebar-about h1 {
+  color: rgb(134,184,212);
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;;
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}
+.sidebar-nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.75;
+}
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  font-weight: bold;
+  color: black;
 }
 
 @media (min-width: 48em) {
@@ -68,41 +105,28 @@ html {
     bottom: 0;
     width: 14rem;
     text-align: left;
+    padding: 2rem 1rem 0 1rem;
+    background-color: white;
   }
-}
 
-/* Sidebar links */
-.sidebar a {
-  color: #fff;
-}
+  .sidebar a {
+    color: rgb(134,184,212);
+  }
 
-/* About section */
-.sidebar-about h1 {
-  color: #fff;
-  margin-top: 0;
-  font-family: 'Roboto', sans-serif;;
-  font-size: 3.25rem;
-}
+  .sidebar-nav {
+    margin-top: 25%;
+  }
 
-/* Sidebar nav */
-.sidebar-nav {
-  margin-bottom: 1rem;
-}
-.sidebar-nav-item {
-  display: block;
-  line-height: 1.75;
-}
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
-  text-decoration: underline;
-}
-.sidebar-nav-item.active {
-  font-weight: bold;
+  .sidebar-nav-item {
+    margin-top: 0.5rem;
+  }
+
 }
 
 
 /* Adding a top floating nav as well */
 .topbar {
+  z-index: 999;
   padding: 1rem 1rem 1rem 1rem;
   color: rgba(255,255,255,.5);
   background: rgb(255,255,255);
@@ -125,22 +149,21 @@ a.sidebar-nav-item:focus {
   margin: 3px; 
   background: rgb(134,184,212);
   border-radius: 4px;
-  font-size: 14px;
+  /* font-size: 14px; */
   text-align: center;
 }
 
 .topbar-nav-item {
   display: block;
   line-height: 2;
-  color: white;
+  color:  white;
   text-align: center;
 }
 
 a.topbar-nav-item:hover,
 a.topbar-nav-item:focus {
-  text-decoration: underline;
   font-weight: bold;
-  color: blue;
+  color: black;
 }
 .topbar-nav-item.active {
   font-weight: bold;
@@ -201,6 +224,45 @@ a.topbar-nav-item:focus {
   }
 }
 
+/* footer  */
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0; 
+  width: 100%;
+  height: 16px;
+  font-size: 12px;
+  margin-left: 3px;
+  background-color: rgb(205, 205, 205);
+  color: white;
+
+}
+
+@media (min-width: 48em) {
+  .footer {
+    width: 14rem;
+    background-color: rgba(255, 251, 251, 0);
+  }
+}
+
+/* Image */
+.monkey {
+  display: block;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 48em) {
+  .monkey {
+    margin-top: 1rem;
+    width: 80%;
+  }
+}
+
+
+/* EXTRA formating options for Hyde*/
 
 /*
  * Reverse layout

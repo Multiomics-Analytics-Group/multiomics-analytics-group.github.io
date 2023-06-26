@@ -8,7 +8,7 @@ permalink:        pretty
 # Setup
 title:            MoNA
 tagline:          'MoNA'
-description:      'Testing'
+description:      'Multi-omics Network Analytics Group'
 url:              'http://multiomics-analytics-group.github.io'
 baseurl:          ''     
 
@@ -16,10 +16,10 @@ baseurl:          ''
 #   name:           'Mark Otto'
 #   url:            https://twitter.com/mdo
 
-paginate:         5
+# paginate:         5
 
 # Custom vars
-version:          5
+
 
 github:
   repo:           https://github.com/Multiomics-Analytics-Group

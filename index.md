@@ -10,7 +10,7 @@ This is our vision.
 # News
 
 <!---
-Carosel from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
+Carosel example from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
 -->
 
 <html>
@@ -18,7 +18,6 @@ Carosel from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slides
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 * {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;}
 

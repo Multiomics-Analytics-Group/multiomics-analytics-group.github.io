@@ -1,6 +1,9 @@
 ---
 layout: page
 title: Data Science Platform
+permalink: /data-science-platform/
 ---
 
-# ds platform
+# Mission
+
+Link out
