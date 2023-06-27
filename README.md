@@ -25,26 +25,29 @@ Included are instructions for how to update the team website with a focus on the
 
 (only highlighting folders and files relevant to updating site)
 
-📦 mona-site-live
- ┣ 📂_includes
- ┃ ┣ 📜head.html
- ┃ ┗ 📜sidebar.html
- ┣ 📂_layouts
- ┃ ┣ 📜default.html
- ┃ ┗ 📜page.html
- ┣ 📂_site
- ┣ 📂public
- ┃ ┣ 📂assets
- ┃ ┣ 📂css
- ┣ 📜1research.md
- ┣ 📜2ds_platform.md
- ┣ 📜3people.md
- ┣ 📜4tools.md
- ┣ 📜5education.md
- ┣ 📜6contact.md
- ┣ 📜index.md
- ┣ 📜README.md
- ┗ 📜_config.yml
+```bash
+/
+├── index.md
+├── 1research.md
+├── 2ds_platform.md
+├── 3people.md
+├── 4tools.md
+├── 5education.md
+├── 6contact.md
+├── README.md
+├── _config.yml
+├── _includes/
+│   ├── head.html
+│   └── sidebar.html
+├── _layouts/
+│   ├── default.html
+│   └── page.html
+├── _site/
+└── public/
+    ├── assets/
+    └── css/
+
+```
 
 - Main takeaway: To update the contents of the website you will only need to add/remove/update markdown files in the main directory. 
 
