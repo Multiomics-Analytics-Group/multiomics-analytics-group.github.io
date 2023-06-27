@@ -3,11 +3,10 @@ highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-#relative_permalinks: true
 
 # Setup
 title:            MoNA
-tagline:          'MoNA'
+tagline:          'Multi-omics Network Analytics Group'
 description:      'Multi-omics Network Analytics Group'
 url:              'http://multiomics-analytics-group.github.io'
 baseurl:          ''     
@@ -19,7 +18,5 @@ baseurl:          ''
 # paginate:         5
 
 # Custom vars
-
-
 github:
   repo:           https://github.com/Multiomics-Analytics-Group
