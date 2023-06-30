@@ -5,7 +5,7 @@ title: Home
 
 # Vision
 
-This is our vision. 
+Getting a holistic view of biological systems and their context to understand their complexity and provide new insights and applications that can benefit human and environmental health.
 
 # News
 
