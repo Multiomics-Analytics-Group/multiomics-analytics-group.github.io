@@ -7,7 +7,6 @@ title: Home
 
 Getting a holistic view of biological systems and their context to understand their complexity and provide new insights and applications that can benefit human and environmental health.
 
-# News
 
 <!---
 Carosel example from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow
@@ -114,19 +113,19 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="https://cdn.pixabay.com/photo/2018/12/13/20/42/nyhavn-3873696_640.jpg" style="width:100%">
+  <img src="{{ site.baseurl }}/public/assets/name.png" style="width:100%">
   <div class="text"><a href='google.com'>Caption Text with hyperlink option</a></div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="https://cdn.pixabay.com/photo/2018/12/13/20/42/nyhavn-3873696_640.jpg" style="width:100%">
+  <img src="{{ site.baseurl }}/public/assets/research_areas.png" style="width:100%">
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="https://cdn.pixabay.com/photo/2018/12/13/20/42/nyhavn-3873696_640.jpg" style="width:100%">
+  <img src="{{ site.baseurl }}/public/assets/datascience_graph.png" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
