@@ -114,19 +114,16 @@ img {vertical-align: middle;}
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
   <img src="{{ site.baseurl }}/public/assets/name.png" style="width:100%">
-  <div class="text"><a href='google.com'>Caption Text with hyperlink option</a></div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
   <img src="{{ site.baseurl }}/public/assets/research_areas.png" style="width:100%">
-  <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
   <img src="{{ site.baseurl }}/public/assets/datascience_graph.png" style="width:100%">
-  <div class="text">Caption Three</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">❮</a>
