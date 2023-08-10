@@ -8,9 +8,11 @@ permalink: /research/
 
 ## Knowledge Graphs
 
-**Building High-quality Knowledge Graphs.** Using and developing Knowledge Graph technologies and methods to structured data and to connect them to knowledge to facilitate analysis and interpretation. We contribute to a groundbreaking field by developing tools and methods to build, assess and investigate these graph structures and apply them to solve challenges in biology and health.
+**Building High-quality Knowledge Graphs.** Using and developing Knowledge Graph technologies and methods to structured data and to connect them to existing biological knowledge. These structures facilitate analysis and interpretation of complex data. We are contributing to a groundbreaking field by developing tools and methods to build, assess and investigate Knowledge Graphs and applying them to solve challenges in biology and health.
 
-## Machine Learning on Graphs
+## Graph Machine Learning
+
+**Developing and Applying Novel Methods on Graphs.** Unleashing the power of Machine Learning on Graphs, a cutting-edge approach to extracting valuable insights from network data. We explore how this fusion of machine learning and graph theory helps to recognize patterns, generate predictions, and discovering new knowledge across a multitude of applications, including biological and medical networks.
 
 
 ## Microbial Communities
@@ -21,7 +23,7 @@ permalink: /research/
 
 ## Multimodal Data
 
-**Developing tools to process, integrate, and analyse multimodal data.** Diving into the benefits of harmonising multimodal data that converge to provide a comprehensive view of complex biological systems. Specifically we are interested in high-throughput multi-omics data generated using Mass spectrometry technology (proteomics and metabolomics) and metaomics data (metagenomics and metaproteomics).
+**Implementing tools to process, integrate, and analyse multimodal data.** Diving into the benefits of harmonising multimodal data that converge to provide a comprehensive view of complex biological systems. Specifically we are interested in high-throughput multi-omics data generated using Mass spectrometry technology (proteomics and metabolomics) and metaomics data (metagenomics and metaproteomics).
 
 
 
