@@ -74,19 +74,18 @@ html {
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="ASD.jpeg" alt="Alberto" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/ASD.jpeg" alt="Alberto" style="width:15%">
       <div class="container">
         <h2>Alberto Santos</h2>
         <p class="title">Group Lead</p>
         <p>Multi-omics Network Analytics &amp; Data Science Platform</p>
-        <a>albsad@dtu.dk</p>
+        <p>albsad@dtu.dk</p>
       </div>
     </div>
   </div>
-
   <div class="column">
     <div class="card">
-      <img src="ALP.jpeg" alt="Angel" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:15%">
       <div class="container">
         <h2>Angel L. Panthanourak</h2>
         <p class="title">Research Assistant</p>
@@ -99,7 +98,7 @@ html {
 <div class="row">  
   <div class="column">
     <div class="card">
-      <img src="APC.jpg" alt="Albert" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/APC.jpg" alt="Albert" style="width:15%">
       <div class="container">
         <h2>Albert Palleja Caro</h2>
         <p class="title">Senior Data Scientist</p>
@@ -110,7 +109,7 @@ html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="JBJ.jpg" alt="Jakob" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/JBJ.jpg" alt="Jakob" style="width:15%">
       <div class="container">
         <h2>Jakob B. Jespersen</h2>
         <p class="title">Data Scientist</p>
