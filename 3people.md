@@ -74,7 +74,7 @@ html {
 <h2>Multi-omics Network Analytics (MoNA)</h2>
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/ASD.jpeg" alt="Alberto" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/ASD.jpeg" alt="Alberto" style="width:25%">
       <div class="container">
         <h2>Alberto Santos</h2>
         <p class="title">Group Lead</p>
@@ -85,7 +85,7 @@ html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:25%">
       <div class="container">
         <h2>Angel L. Panthanourak</h2>
         <p class="title">Research Assistant</p>
