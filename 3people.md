@@ -99,9 +99,9 @@ html {
 <h2>Data Science Platform</h2>
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/APC.jpeg" alt="Albert" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/APC.jpeg" alt="Albert" style="width:25%">
       <div class="container">
-        <h2>Albert Palleja Caro</h2>
+        <h2>Albert Pallejà Caro</h2>
         <p class="title">Senior Data Scientist</p>
         <p>Data Science Platform</p>
         <p>apca@dtu.dk</p>
@@ -110,7 +110,7 @@ html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:25%">
       <div class="container">
         <h2>Jakob B. Jespersen</h2>
         <p class="title">Data Scientist</p>
