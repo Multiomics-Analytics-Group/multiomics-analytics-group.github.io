@@ -14,7 +14,7 @@ Our courses are designed typically following a short-training format, ranging fr
 
 ## Protein Language Models [[link]](https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling)
 
-<img src="https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling/blob/main/img/nb_logo.png?raw=1" width="400">
+<img src="https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling/blob/main/img/nb_logo.png?raw=1" width="600">
 
 An up-to-date course at the intersection of language models and the complex world of proteins! This course provides an overview of the current state of the art of Protein Language Models (pML), which are revolutionizing research, discovery, and innovation in the field of molecular biology.
 
@@ -29,7 +29,7 @@ An up-to-date course at the intersection of language models and the complex worl
 
 ## Networks to Study Microbes [[link]](https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes)
 
-<img src="https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes/blob/main/figures/netmicrobes.png?raw=1" width="300">
+<img src="https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes/blob/main/figures/netmicrobes.png?raw=1" width="500">
 
 The goal of the course is to provide an introduction to the use of networks in microbiology. The students will receive an overview of the field of computational microbiology with special emphasis on data standardization* and data sources, and how to use graph structures to solve biological questions. Further, the students will get a hands on introduction to Python programming language and its scientific libraries. 
 
