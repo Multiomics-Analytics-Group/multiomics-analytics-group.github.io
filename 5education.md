@@ -25,29 +25,23 @@ An up-to-date course at the intersection of language models and the complex worl
 - Explore cutting-edge use cases and discover how protein language models are shaping the future of molecular biology
 - Understand the current limitations of the field and be prepared to tackle bioinformatics challenges
 
+-----------------------
 
 ## Networks to Study Microbes [[link]](https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes)
 
-<p align="center">
-  <img src="https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes/blob/main/figures/netmicrobes.png?raw=1" width="300">
-</p>
+<img src="https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes/blob/main/figures/netmicrobes.png?raw=1" width="300">
 
 The goal of the course is to provide an introduction to the use of networks in microbiology. The students will receive an overview of the field of computational microbiology with special emphasis on data standardization* and data sources, and how to use graph structures to solve biological questions. Further, the students will get a hands on introduction to Python programming language and its scientific libraries. 
 
 **Objectives**
 
--  Use multiple data sources for studying microbes in different biological contexts
+- Use multiple data sources for studying microbes in different biological contexts
 - Build networks, visualize and analyse them using different tools
 - Use Python to extract, transform and analyse different data structures
 
-<div class="warning" style='background-color:#a6bddb; color: #08519c; border-left: solid #67a9cf 7px; border-radius: 4px; padding:0.01em;'>
-<span>
-<p style='margin-top:0.01em; text-align:center'><b>NOTE</b></p>
-<p style='margin-left:0.01em; text-align:center'>
-    Some of the course content is in Spanish, but we are working on an english version. Coming out soon!
-</p>
-</div>
+> **_NOTE:_** Some of the course content is in Spanish, but we are working on an english version. Coming out soon!
 
+-----------------------
 
 ## Leveraging Existing Biological Data and Making Sense of it [[link]](https://github.com/Multiomics-Analytics-Group/course_synthetic_biology_data)
 
@@ -61,6 +55,7 @@ This course is designed to introduce students to the essential skills required t
 - Discover diverse data sources and learn how to generate and find open data
 - Explore the graphs and networks as powerful visual representation of complex data
 
+-----------------------
 
 ## Introduction to Knowledge Graphs [[link]](https://github.com/Multiomics-Analytics-Group/course_knowledge_graphs)
 
