@@ -92,7 +92,7 @@ html {
         <h2>Angel L. Panthanourak</h2>
         <p class="title">Research Assistant</p>
         <p>Multi-omics Network Analytics</p>
-        <p>example@example.com</p>
+        <p>anglup [at] biosustain.dtu.dk</p>
       </div>
     </div>
   </div>
