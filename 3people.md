@@ -3,8 +3,6 @@ layout: page
 title: People
 permalink: /people/
 ---
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,33 +67,59 @@ html {
 </head>
 <body>
 
-<h2>Meet The Team</h2>
+<h2>Responsive "Meet The Team" Section</h2>
+<p>Resize the browser window to see the effect.</p>
 <br>
 
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="public/assets/ASD.jpeg" alt="Alberto" style="width:15%">
+      <img src="ASD.jpeg" alt="Alberto" style="width:15%">
       <div class="container">
         <h2>Alberto Santos</h2>
         <p class="title">Group Lead</p>
         <p>Multi-omics Network Analytics &amp; Data Science Platform</p>
-        <p>albsad[at]biosustain.dtu.dk</p>
+        <a>albsad@dtu.dk</p>
       </div>
     </div>
   </div>
 
   <div class="column">
     <div class="card">
-      <img src="public/assets/ALP.jpeg" alt="Angel" style="width:15%">
+      <img src="ALP.jpeg" alt="Angel" style="width:15%">
       <div class="container">
         <h2>Angel L. Panthanourak</h2>
         <p class="title">Research Assistant</p>
         <p>Multi-omics Network Analytics</p>
-        <p>anglup[at]biosustain.dtu.dk</p>
+        <p>anglup@dtu.dk</p>
       </div>
     </div>
   </div>
+</div>
+<div class="row">  
+  <div class="column">
+    <div class="card">
+      <img src="APC.jpg" alt="Albert" style="width:15%">
+      <div class="container">
+        <h2>Albert Palleja Caro</h2>
+        <p class="title">Senior Data Scientist</p>
+        <p>Data Science Platform</p>
+        <p>apca@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="JBJ.jpg" alt="Jakob" style="width:15%">
+      <div class="container">
+        <h2>Jakob B. Jespersen</h2>
+        <p class="title">Data Scientist</p>
+        <p>Data Science Platform</p>
+        <p>jbeje@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
-
