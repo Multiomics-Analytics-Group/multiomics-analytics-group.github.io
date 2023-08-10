@@ -7,10 +7,12 @@ permalink: /contact/
 # Address
 
 Building 220, Kemitorvet
+
 2800 Kgs. Lyngby, Denmark
+
 Phone: +45 45 25 80 00
 
-Email: albsad@biosustain.dtu.dk
+Email: albsad [at] biosustain.dtu.dk
 
 # Map
 
