@@ -80,19 +80,19 @@ html {
         <h2>Alberto Santos</h2>
         <p class="title">Group Lead</p>
         <p>Multi-omics Network Analytics &amp; Data Science Platform</p>
-        <p>albsad [at] biosustain.dtu.dk</p>
+        <p>albsad[at]biosustain.dtu.dk</p>
       </div>
     </div>
   </div>
 
   <div class="column">
     <div class="card">
-      <img src="public/assets/team2.jpg" alt="Mike" style="width:20%">
+      <img src="public/assets/ALP.jpeg" alt="Angel" style="width:15%">
       <div class="container">
         <h2>Angel L. Panthanourak</h2>
         <p class="title">Research Assistant</p>
         <p>Multi-omics Network Analytics</p>
-        <p>anglup [at] biosustain.dtu.dk</p>
+        <p>anglup[at]biosustain.dtu.dk</p>
       </div>
     </div>
   </div>
