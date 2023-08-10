@@ -20,9 +20,12 @@ permalink: /research/
 
 ## Microbial Communities
 
-**Exploring microbial communities and their environments.** Integrating multiple biological resources to unravel the assembly, interaction and adaptation mechanisms of microbial networks, offering insights into their functions and inpact on ecosystems, and how changes affect those communities.
+**Exploring Microbial Communities and their Environments.** Integrating multiple biological resources to unravel the assembly, interaction and adaptation mechanisms of microbial networks, offering insights into their functions and inpact on ecosystems, and how changes affect those communities.
 
-<iframe src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/multiomics-analytics-group.github.io/master/public/cluster_8.html" width="600" height="450" style="border:0;"></iframe>
+
+<iframe src="{{ site.baseurl }}/public/cluster_8.html" width="600" height="450" style="border:0;"></iframe>
+
+
 
 ------------------------
 
