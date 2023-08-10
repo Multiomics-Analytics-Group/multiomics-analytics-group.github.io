@@ -67,11 +67,11 @@ html {
 </head>
 <body>
 
-<h2>Responsive "Meet The Team" Section</h2>
-<p>Resize the browser window to see the effect.</p>
 <br>
+<h1>Meet The Team</h1>
 
 <div class="row">
+<h2>Multi-omics Network Analytics (MoNA)</h2>
   <div class="column">
     <div class="card">
       <img src="{{ site.baseurl }}/public/assets/ASD.jpeg" alt="Alberto" style="width:15%">
@@ -95,10 +95,11 @@ html {
     </div>
   </div>
 </div>
-<div class="row">  
+<div class="row">
+<h2>Data Science Platform</h2>
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/APC.jpg" alt="Albert" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/APC.jpeg" alt="Albert" style="width:15%">
       <div class="container">
         <h2>Albert Palleja Caro</h2>
         <p class="title">Senior Data Scientist</p>
@@ -109,7 +110,7 @@ html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/JBJ.jpg" alt="Jakob" style="width:15%">
+      <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:15%">
       <div class="container">
         <h2>Jakob B. Jespersen</h2>
         <p class="title">Data Scientist</p>
