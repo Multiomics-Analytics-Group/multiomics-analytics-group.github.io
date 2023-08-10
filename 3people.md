@@ -74,7 +74,7 @@ html {
 <h2>Multi-omics Network Analytics (MoNA)</h2>
   <div class="column">
     <div class="card">
-      <img src="public/assets/ASD.jpeg" alt="Alberto" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/public/assets/ASD.jpeg" alt="Alberto" style="width:45%">
       <div class="container">
         <h2>Alberto Santos</h2>
         <p class="title">Group Lead</p>
@@ -85,7 +85,7 @@ html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="public/assets/ALP.jpeg" alt="Angel" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
       <div class="container">
         <h2>Angel L. Panthanourak</h2>
         <p class="title">Research Assistant</p>
@@ -99,7 +99,7 @@ html {
 <h2>Data Science Platform</h2>
   <div class="column">
     <div class="card">
-      <img src="public/assets/APC.jpeg" alt="Albert" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/public/assets/APC.jpeg" alt="Albert" style="width:45%">
       <div class="container">
         <h2>Albert Pallejà Caro</h2>
         <p class="title">Senior Data Scientist</p>
@@ -110,7 +110,7 @@ html {
   </div>
   <div class="column">
     <div class="card">
-      <img src="public/assets/JBJ.jpeg" alt="Jakob" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/public/assets/JBJ.jpeg" alt="Jakob" style="width:45%">
       <div class="container">
         <h2>Jakob B. Jespersen</h2>
         <p class="title">Data Scientist</p>
