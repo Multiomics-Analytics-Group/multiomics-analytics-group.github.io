@@ -15,7 +15,7 @@ We are currently working on a new version that will be more flexible and general
 <img src="{{ site.baseurl }}/public/assets/ckg.jpeg" style="width:100%">
 
 
-# OrthoHPI 2.0 [link](https://orthohpi.streamlit.app/)
+# OrthoHPI 2.0 [[link]](https://orthohpi.streamlit.app/)
 
 ## Orthology–based Host–Parasite Protein–protein Interactions
 
