@@ -21,4 +21,4 @@ We are currently working on a new version that will be more flexible and general
 
 Understanding host-parasite interactions is vital for tackling infectious diseases. Due to the challenges in experimental identification, we propose a computational method to predict protein interactions between human and 18 eukaryotic parasites. Our approach leverages an orthology-based transfer of interactions, focusing on parasite secretomes and human membrane proteins. We also filter the host proteome based on the parasites' specific tissue tropisms. In this version, we added  cell-type specific expression annotations to provide further resolution of the host-parasite predicted interactions and we support interactions with structural information.
 
-<iframe src="{{ site.baseurl }}/public/Em_network.html" width="600" height="450" style="border:0;"></iframe>
+<iframe src="{{ site.baseurl }}/public/Gi_network.html" width="600" height="450" style="border:0;"></iframe>
