@@ -126,13 +126,7 @@ img {vertical-align: middle;}
   <img src="{{ site.baseurl }}/public/assets/datascience_graph.png" style="width:100%">
 </div>
 
-Our research spans biology and data science, tackling complex planetary and human health challenges. We focus on **Multimodal Data**, processing and analyzing diverse types such as mass spectrometry (proteomics, metabolomics) and metaomics (metagenomics, metatranscriptomics, metaproteomics), tackling complex biological problems.
 
-A key component is developing **High-quality Knowledge Graphs** that connect data, allowing integration and interpretation of these data and we use **Graph Machine Learning** to extract insights, revealing patterns and generating predictions from graph structures.
-
-We apply these technologies to explore and understand **Microbial Communities** and their environments, unraveling assembly, interaction, adaptation, and impact, spanning ecology to biotech.
-
-Further, we're strong advocates of **Open Science**, adhering to open principles for our generated data, training, and software, aiming to reduce inequality and promote accessibility by democratizing data science.
 
 <a class="prev" onclick="plusSlides(-1)">❮</a>
 <a class="next" onclick="plusSlides(1)">❯</a>
@@ -177,3 +171,11 @@ function showSlides(n) {
 
 </body>
 </html> 
+
+Our research spans biology and data science, tackling complex planetary and human health challenges. We focus on **Multimodal Data**, processing and analyzing diverse types such as mass spectrometry (proteomics, metabolomics) and metaomics (metagenomics, metatranscriptomics, metaproteomics), tackling complex biological problems.
+
+A key component is developing **High-quality Knowledge Graphs** that connect data, allowing integration and interpretation of these data and we use **Graph Machine Learning** to extract insights, revealing patterns and generating predictions from graph structures.
+
+We apply these technologies to explore and understand **Microbial Communities** and their environments, unraveling assembly, interaction, adaptation, and impact, spanning ecology to biotech.
+
+Further, we're strong advocates of **Open Science**, adhering to open principles for our generated data, training, and software, aiming to reduce inequality and promote accessibility by democratizing data science.
