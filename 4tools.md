@@ -12,7 +12,7 @@ The Clinical Knowledge Graph (CKG) is a graph database with millions of nodes an
 
 We are currently working on a new version that will be more flexible and generalizable. **Stay tuned!**
 
-<img src="{{ site.baseurl }}/public/assets/ckg.jpeg" style="width:100%">
+<img src="{{ site.baseurl }}/public/ckg.jpeg" style="width:100%">
 
 
 # OrthoHPI 2.0 [[link]](https://orthohpi.streamlit.app/)
