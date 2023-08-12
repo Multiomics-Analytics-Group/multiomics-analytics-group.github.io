@@ -167,12 +167,16 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
-</script>
+</script>>
+
+</br>
+</br>
 
 </body>
 </html> 
 
-Our research spans biology and data science, tackling complex planetary and human health challenges. We focus on **Multimodal Data**, processing and analyzing diverse types such as mass spectrometry (proteomics, metabolomics) and metaomics (metagenomics, metatranscriptomics, metaproteomics), tackling complex biological problems.
+
+We focus on **Multimodal Data**, processing and analyzing diverse types such as mass spectrometry (proteomics, metabolomics) and metaomics (metagenomics, metatranscriptomics, metaproteomics), tackling complex biological problems.
 
 A key component is developing **High-quality Knowledge Graphs** that connect data, allowing integration and interpretation of these data and we use **Graph Machine Learning** to extract insights, revealing patterns and generating predictions from graph structures.
 
