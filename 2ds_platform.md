@@ -7,7 +7,7 @@ permalink: /data-science-platform/
 # Data Science Platform
 
 <span style="color:grey">
-    <h3>Supporting and Promoting Data Science</h3>
+    Supporting and Promoting Data Science
 </span>
 
 The primary objective of the Data Science Platform (DSP) is to make data science more accessible and inclusive across the Centre and the DTU community. 
