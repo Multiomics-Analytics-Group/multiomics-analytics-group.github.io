@@ -169,8 +169,6 @@ function showSlides(n) {
 }
 </script>>
 
-</br>
-</br>
 
 </body>
 </html> 
