@@ -87,7 +87,7 @@ html {
     <div class="card">
       <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
       <div class="container">
-        <h2>Angel L. Panthanourak</h2>
+        <h2>Angel L. Phanthanourak</h2>
         <p class="title">Research Assistant</p>
         <p>Multi-omics Network Analytics</p>
         <p>anglup@dtu.dk</p>

@@ -12,7 +12,7 @@ Building 220, Kemitorvet
 
 Phone: +45 45 25 80 00
 
-Email: albsad [at] biosustain.dtu.dk
+Email: albsad@biosustain.dtu.dk
 
 # Map
 
