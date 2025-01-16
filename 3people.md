@@ -119,6 +119,17 @@ html {
       </div>
     </div>
   </div>
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/hw.jpeg" alt="Henry" style="width:45%">
+      <div class="container">
+        <h2>JHenry Webel</h2>
+        <p class="title">Senior Data Scientist</p>
+        <p>Data Science Platform</p>
+        <p>heweb@dtu.dk</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
