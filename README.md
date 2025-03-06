@@ -114,7 +114,7 @@ If you want to test/preview the site locally as you make changes
 4. make whatever changes to the content you want 
 5. save the file 
 6. push the changes to your branch
-7. Make a pull request for your branch into the MoNA Master branch then jekyll will take care of the rest
+7. Make a pull request for your branch into the **MoNA's `Master` branch** (:warning: NOT poole/hyde) then jekyll will take care of the rest
   
 (it's that easy :smiley:)
 
