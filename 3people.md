@@ -88,6 +88,52 @@ html {
       <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
       <div class="container">
         <h2>Angel L. Phanthanourak</h2>
+        <p class="title">PhD Student</p>
+        <p>Multi-omics Network Analytics</p>
+        <p>anglup@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
+      <div class="container">
+        <h2>Test</h2>
+        <p class="title">Research Assistant</p>
+        <p>Multi-omics Network Analytics</p>
+        <p>anglup@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
+      <div class="container">
+        <h2>Test</h2>
+        <p class="title">Research Assistant</p>
+        <p>Multi-omics Network Analytics</p>
+        <p>anglup@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
+      <div class="container">
+        <h2>Test</h2>
+        <p class="title">Research Assistant</p>
+        <p>Multi-omics Network Analytics</p>
+        <p>anglup@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
+      <div class="container">
+        <h2>Testerrr</h2>
         <p class="title">Research Assistant</p>
         <p>Multi-omics Network Analytics</p>
         <p>anglup@dtu.dk</p>
@@ -127,10 +173,39 @@ html {
         <p class="title">Senior Data Scientist</p>
         <p>Data Science Platform</p>
         <p>heweb@dtu.dk</p>
+      <img src="{{ site.baseurl }}/public/assets/APC.jpeg" alt="Albert" style="width:45%">
+      <div class="container">
+        <h2>Albert Pallejà Caro</h2>
+        <p class="title">Senior Data Scientist</p>
+        <p>Data Science Platform</p>
+        <p>apca@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:45%">
+      <div class="container">
+        <h2>Jakob B. Jespersen</h2>
+        <p class="title">Data Scientist</p>
+        <p>Data Science Platform</p>
+        <p>jbeje@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:45%">
+      <div class="container">
+        <h2>testttt</h2>
+        <p class="title">Data Scientist</p>
+        <p>Data Science Platform</p>
+        <p>jbeje@dtu.dk</p>
       </div>
     </div>
   </div>
 </div>
+
 
 </body>
 </html>
