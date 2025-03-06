@@ -6,22 +6,22 @@ Jekyll is a static site generator that takes care of updating a site template wi
 
 The site template is [Hyde (see repo for more details)](https://github.com/poole/hyde) with some of our own modifications.
 
-Included are instructions for how to update the team website with a focus on the content rather than formating. 
+Included are instructions for how to update the team website with a focus on the content rather than styling. 
 
 - [MoNA website](#mona-website)
-  - [Contents](#contents)
-    - [Directory organization](#directory-organization)
+  - [Directory organization](#directory-organization)
+  - [MUST READ - how jekyll works](#must-read---how-jekyll-works)
     - [Home page (default) vs. all other pages](#home-page-default-vs-all-other-pages)
-      - [Adding a page (example)](#adding-a-page-example)
-      - [Updating an existing page](#updating-an-existing-page)
-    - [Updating side nav links](#updating-side-nav-links)
-    - [Testing locally](#testing-locally)
+  - [Updating website content](#updating-website-content)
+
+    - [Adding a page (example)](#adding-a-page-example)
+    - [Updating an existing page](#updating-an-existing-page)
+  - [Updating side nav links](#updating-side-nav-links)
+  - [Testing locally](#testing-locally)
   - [Original Author](#original-author)
   - [License](#license)
 
-## Contents
-
-### Directory organization
+## Directory organization of Repo
 
 (only highlighting folders and files relevant to updating site)
 
@@ -49,37 +49,70 @@ Included are instructions for how to update the team website with a focus on the
 
 ```
 
-- Main takeaway: To update the contents of the website you will only need to add/remove/update markdown files in the main directory. 
+## MUST READ - how jekyll works
 
-- To incorporate images or any other files into the site please put them in `/public/assets/`
+1.  How jekyll knows to work its magic on a markdown or html file is based on the file's [YAML front matter block](https://jekyllrb.com/docs/front-matter/). 
   
-- Extra: Updates to formating is done in the 3 directories: `/_includes/` `/_layouts/` and `/_public/`
+  e.g., 
+  ```
+  ---
+  layout: page
+  title: About
+  permalink: /about/
+  ---
+  ```
+- **no front matter = not included in the website** (e.g., jekyll knows not to include this README.md you are reading because there is no front matter)
 
-### Home page (default) vs. all other pages
+2.  Main takeaway: To update the **contents of the website** you will only need to add/remove/update the markdown files with front matter in the main directory. (e.g., [3people.md](3people.md)) More instructions in [Updating website content](#updating-website-content).
+
+- **Do not alter the files in `_includes`, `_layouts` for now.**
+
+#### Home page (default) vs. all other pages
 
 - How jekyll knows to work its magic on a markdown or html file is based on the file's [YAML front matter block](https://jekyllrb.com/docs/front-matter/). 
   
-- no front matter = not included in the website (e.g., this readme)
-  
 - Currently, there are 2 page layouts (templates) used in our site:
-  - `/_layouts/default.html`
-  - `/_layouts/page.html`
+  - `default` via */_layouts/default.html*
+  - `page` via */_layouts/page.html`*
   
-- The way that they are merged with the markdown files is via the front matter: 
+- The way that the styling is merged with the markdown files is via `layout` in the front matter: 
+  e.g.,
+  ```
+  ---
+  layout: page
+  title: About
+  permalink: /about/
+  ---
+  ```
 
-```
----
-layout: page
-title: About
-permalink: /about/
----
-```
+- `layout: page` is to be used for almost all of the pages you want included in the site
 
-- `layout: default` should only be used for the home page because it has some additional formatting + appears as the first option in the top menu bar
+- `layout: default` is only used for the home page [index.md](index.md) because it has some additional formatting + appears as the first option in the top menu bar
 
->From the Hyde repo: "**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.md` page from this list by specifying the `default` layout."
+  >From the Hyde repo: "**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.md` page from this list by specifying the `default` layout."
 
-- `layout: page` is used for all other pages you want included in the site. More instructions for adding a new page below. 
+
+## Updating website content
+
+- To update the contents of the website you will only need to add/remove/update markdown files in the main directory. 
+
+- To incorporate images or any other files into the site please put them in `/public/assets/`
+  
+
+#### Updating an existing page
+
+1. Clone this repository
+2. Create a branch from the 'master' branch of THIS repository (not the poole/hyde one)
+3. 
+
+- In the main directory, open the markdown file
+- make whatever changes to the content you want 
+- save it and push changes
+  
+(it's that easy :smiley:)
+
+
+
 
 #### Adding a page (example)
 
@@ -108,19 +141,19 @@ permalink: /contact/
 
 - when done save and push changes, jekyll will take care of the rest
 
-#### Updating an existing page
 
-- In the main directory, open the markdown file
-- make whatever changes to the content you want 
-- save it and push changes
-  
-(it's that easy :smiley:)
+## Updating the styling 
+
+- Extra: Updates to formating is done in the 3 directories: `/_includes/` `/_layouts/` and `/_public/`
 
 ### Updating side nav links
 
 The file that needs to be updated is `/_inclues/sidebar.html`
 
 Look for the `sidebar-nav-item` tags
+
+
+
 
 ### Testing locally
 
