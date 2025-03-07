@@ -70,5 +70,7 @@ An introduction to the fascinating world of Knowledge Graphs and their vital rol
 
 ## Data Science Platform Trainings
 
-An overview of the technial trainings offered by the Data Science Platform can be found 
+The Data Science platform has strong commitment to advancing the education of our researcher fellows in Data Science topics. To that end, we are organizing courses about different data-types handled and produced at DTU - Biosustain (during May), and about data science aspects in general (during November). Furthermore, we are also co-organizing with DTU - Bioengineering the Data Science Club on monthly basis. 
+
+An overview of the technical trainings offered by the Data Science Platform can be found 
 at [biosustain.github.io/dsp_notes/trainings](https://biosustain.github.io/dsp_notes/trainings).
