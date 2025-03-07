@@ -21,3 +21,7 @@ The DSP is built on four pillars: **support, education, innovation, and tool dev
 - **Innovation** seeks to introduce researchers to new computational biology methods and technologies, and modernize the data science landscape at the Centre. This pillar aims to help researchers stay ahead of the curve by learning the latest technologies and techniques.
 
 - **Tool development** aims to transform the outputs of the other pillars into standard tools that can be shared across the Centre and open sourced for the entire community to use. This will create a comprehensive set of tools easily accessible to researchers.
+
+## Data Science Platform Notes
+
+We have our own notes repository which you can find at [biosustain.github.io/dsp_notes/](https://biosustain.github.io/dsp_notes/). It contains technical notes related to our work and links to our teaching materials.
