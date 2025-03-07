@@ -67,3 +67,8 @@ An introduction to the fascinating world of Knowledge Graphs and their vital rol
 - Gain insight into data standards and graph databases in creating effective Knowledge Graphs
 - Explore real-world examples to inspire innovative approaches to biological research
 - Learn practical analysis techniques to harness the power of Knowledge Graphs for insightful discoveries in biology
+
+## Data Science Platform Trainings
+
+An overview of the technial trainings offered by the Data Science Platform can be found 
+at [biosustain.github.io/dsp_notes/trainings](https://biosustain.github.io/dsp_notes/trainings).
