@@ -109,7 +109,6 @@ permalink: /people/
         <h2>Alberto Santos</h2>
         <p class="title">Director, Informatics Platform</p>
         <p class="title">Group Lead</p>
-        <p>Multi-omics Network Analytics &amp; Data Science Platform</p>
         <p>albsad@dtu.dk</p>
       </div>
     </div>
@@ -121,7 +120,6 @@ permalink: /people/
       <div class="container">
         <h2>Angel L. Phanthanourak</h2>
         <p class="title">PhD Student</p>
-        <p>Multi-omics Network Analytics</p>
         <p>anglup@dtu.dk</p>
       </div>
     </div>
@@ -133,7 +131,6 @@ permalink: /people/
       <div class="container">
         <h2>Sebastian Ayala Ruano</h2>
         <p class="title">Research Assistant</p>
-        <p>Multi-omics Network Analytics</p>
         <p>asaru@dtu.dk</p>
       </div>
     </div>
@@ -148,7 +145,6 @@ permalink: /people/
       <div class="container">
         <h2>Txell Amigo</h2>
         <p class="title">Research Assistant</p>
-        <p>Multi-omics Network Analytics</p>
         <p>txeami@dtu.dk</p>
       </div>
     </div>
@@ -160,7 +156,6 @@ permalink: /people/
       <div class="container">
         <h2>Marco Reverenna</h2>
         <p class="title">PhD Student</p>
-        <p>Multi-omics Network Analytics</p>
         <p>marcor@dtu.dk</p>
       </div>
     </div>
@@ -172,7 +167,6 @@ permalink: /people/
       <div class="container">
         <h2>Jui-Tse Ko</h2>
         <p class="title">PhD Student</p>
-        <p>Multi-omics Network Analytics</p>
         <p>juik@dtu.dk</p>
       </div>
     </div>
@@ -188,7 +182,6 @@ permalink: /people/
       <div class="container">
         <h2>Alexander Zubov</h2>
         <p class="title">PhD Student</p>
-        <p>Multi-omics Network Analytics</p>
         <p>alzub@dtu.dk</p>
       </div>
     </div>
@@ -200,7 +193,6 @@ permalink: /people/
       <div class="container">
         <h2>Binhuan Sun</h2>
         <p class="title">PhD Student</p>
-        <p>Multi-omics Network Analytics</p>
         <p>binsun@dtu.dk</p>
       </div>
     </div>
@@ -212,7 +204,6 @@ permalink: /people/
       <div class="container">
         <h2>Edir Sebastian Vidal Castro</h2>
         <p class="title">MSc Student & Student Assistant</p>
-        <p>Multi-omics Network Analytics</p>
         <p>s243564@dtu.dk</p>
       </div>
     </div>
@@ -229,7 +220,6 @@ permalink: /people/
       <div class="container">
         <h2>Albert Pallejà Caro</h2>
         <p class="title">Team Lead Data Science Platform</p>
-        <p>Data Science Platform</p>
         <p>apca@dtu.dk</p>
       </div>
     </div>
@@ -241,7 +231,6 @@ permalink: /people/
       <div class="container">
         <h2>Jakob B. Jespersen</h2>
         <p class="title">Data Scientist</p>
-        <p>Data Science Platform</p>
         <p>jbeje@dtu.dk</p>
       </div>
     </div>
@@ -253,7 +242,6 @@ permalink: /people/
       <div class="container">
         <h2>Henry Webel</h2>
         <p class="title">Senior Data Scientist</p>
-        <p>Data Science Platform</p>
         <p>heweb@dtu.dk</p>
       </div>
     </div>
@@ -269,7 +257,6 @@ permalink: /people/
       <div class="container">
         <h2>Juliana Assis</h2>
         <p class="title">Senior Data Scientist</p>
-        <p>Data Science Platform</p>
         <p>jasge@dtu.dk</p>
       </div>
     </div>
@@ -281,7 +268,6 @@ permalink: /people/
       <div class="container">
         <h2>Sebastian Schulz</h2>
         <p class="title">Senior Data Scientist</p>
-        <p>Data Science Platform</p>
         <p>sebschu@dtu.dk</p>
       </div>
     </div>
