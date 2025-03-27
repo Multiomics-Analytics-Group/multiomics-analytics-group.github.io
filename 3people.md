@@ -15,6 +15,10 @@ permalink: /people/
     box-sizing: border-box;
   }
 
+  h1 {
+  padding-top: 50px;
+  }
+
   *, *:before, *:after {
     box-sizing: inherit;
   }
@@ -96,7 +100,9 @@ permalink: /people/
 </head>
 
 <body>
+
 <br>
+
 <h1>Meet The Team</h1>
 
 <div class="row">
