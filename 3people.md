@@ -107,6 +107,7 @@ permalink: /people/
       <img src="{{ site.baseurl }}/public/assets/ASD.jpeg" alt="Alberto" style="width:45%">
       <div class="container">
         <h2>Alberto Santos</h2>
+        <p class="title">Director, Informatics Platform</p>
         <p class="title">Group Lead</p>
         <p>Multi-omics Network Analytics &amp; Data Science Platform</p>
         <p>albsad@dtu.dk</p>
@@ -140,6 +141,7 @@ permalink: /people/
 </div>
 
 <div class="row">
+
   <div class="column">
     <div class="card">
       <img src="{{ site.baseurl }}/public/assets/txell.jpeg" alt="Txell" style="width:45%">
@@ -151,43 +153,88 @@ permalink: /people/
       </div>
     </div>
   </div>
+
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/marco.jpeg" alt="Marco" style="width:45%">
       <div class="container">
-        <h2>Test</h2>
-        <p class="title">Research Assistant</p>
+        <h2>Marco Reverenna</h2>
+        <p class="title">PhD Student</p>
         <p>Multi-omics Network Analytics</p>
-        <p>anglup@dtu.dk</p>
+        <p>marcor@dtu.dk</p>
       </div>
     </div>
   </div>
+
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/ALP.jpeg" alt="Angel" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/juik.jpeg" alt="Jui-Tse" style="width:45%">
       <div class="container">
-        <h2>Testerrr</h2>
-        <p class="title">Research Assistant</p>
+        <h2>Jui-Tse Ko</h2>
+        <p class="title">PhD Student</p>
         <p>Multi-omics Network Analytics</p>
-        <p>anglup@dtu.dk</p>
+        <p>juik@dtu.dk</p>
       </div>
     </div>
   </div>
+
 </div>
 
 <div class="row">
-<h2>Data Science Platform</h2>
+
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/alzub.jpeg" alt="Alexander" style="width:45%">
+      <div class="container">
+        <h2>Alexander Zubov</h2>
+        <p class="title">PhD Student</p>
+        <p>Multi-omics Network Analytics</p>
+        <p>alzub@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/binsun.jpeg" alt="Binhuan" style="width:45%">
+      <div class="container">
+        <h2>Binhuan Sun</h2>
+        <p class="title">PhD Student</p>
+        <p>Multi-omics Network Analytics</p>
+        <p>binsun@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{{ site.baseurl }}/public/assets/edir.jpeg" alt="Edir" style="width:45%">
+      <div class="container">
+        <h2>Edir Sebastian Vidal Castro</h2>
+        <p class="title">MSc Student & Student Assistant</p>
+        <p>Multi-omics Network Analytics</p>
+        <p>s243564@dtu.dk</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <h2>Data Science Platform</h2>
+
   <div class="column">
     <div class="card">
       <img src="{{ site.baseurl }}/public/assets/APC.jpeg" alt="Albert" style="width:45%">
       <div class="container">
         <h2>Albert Pallejà Caro</h2>
-        <p class="title">Senior Data Scientist</p>
+        <p class="title">Team Lead Data Science Platform</p>
         <p>Data Science Platform</p>
         <p>apca@dtu.dk</p>
       </div>
     </div>
   </div>
+
   <div class="column">
     <div class="card">
       <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:45%">
@@ -199,6 +246,7 @@ permalink: /people/
       </div>
     </div>
   </div>
+
   <div class="column">
     <div class="card">
       <img src="{{ site.baseurl }}/public/assets/hw.jpeg" alt="Henry" style="width:45%">
@@ -207,47 +255,38 @@ permalink: /people/
         <p class="title">Senior Data Scientist</p>
         <p>Data Science Platform</p>
         <p>heweb@dtu.dk</p>
-        </div>
+      </div>
     </div>
   </div>
+
 </div>
 
 <div class="row">
+
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/APC.jpeg" alt="Albert" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/jasge.jpeg" alt="Juliana" style="width:45%">
       <div class="container">
-        <h2>Albert Pallejà Caro</h2>
+        <h2>Juliana Assis</h2>
         <p class="title">Senior Data Scientist</p>
         <p>Data Science Platform</p>
-        <p>apca@dtu.dk</p>
+        <p>jasge@dtu.dk</p>
       </div>
     </div>
   </div>
+
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/sebschu.jpeg" alt="Sebastian" style="width:45%">
       <div class="container">
-        <h2>Jakob B. Jespersen</h2>
-        <p class="title">Data Scientist</p>
+        <h2>Sebastian Schulz</h2>
+        <p class="title">Senior Data Scientist</p>
         <p>Data Science Platform</p>
-        <p>jbeje@dtu.dk</p>
+        <p>sebschu@dtu.dk</p>
       </div>
     </div>
   </div>
-  <div class="column">
-    <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/JBJ.jpeg" alt="Jakob" style="width:45%">
-      <div class="container">
-        <h2>testttt</h2>
-        <p class="title">Data Scientist</p>
-        <p>Data Science Platform</p>
-        <p>jbeje@dtu.dk</p>
-      </div>
-    </div>
-  </div>
+
 </div>
-
-
 </body>
 </html>
