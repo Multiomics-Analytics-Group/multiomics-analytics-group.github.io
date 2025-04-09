@@ -133,7 +133,7 @@ permalink: /people/
 
   <div class="column">
     <div class="card">
-      <img src="{{ site.baseurl }}/public/assets/asar.jpeg" alt="Sebastian" style="width:45%">
+      <img src="{{ site.baseurl }}/public/assets/asar.jpg" alt="Sebastian" style="width:70%">
       <div class="container">
         <h2>Sebastian Ayala Ruano</h2>
         <p class="title">Research Assistant</p>
