@@ -369,3 +369,17 @@ a.topbar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+/* Collapsable section */
+details {
+  margin-bottom: 1rem;
+}
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2rem;
+  color: black;
+}
+summary:hover {
+  color: rgb(134,184,212);
+}
