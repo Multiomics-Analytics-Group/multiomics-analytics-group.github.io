@@ -9,7 +9,20 @@ permalink: /tools/
   <h3>Integrating and Interpreting MS-based Proteomics Data</h3>
   <p>The Clinical Knowledge Graph (CKG) is a graph database with millions of nodes and relationships representing experimental data, databases, and scientific literature. Further, CKG is an open-source platform that allows easy expansion with new databases and experimental data types and it includes statistical and machine learning tools for faster proteomics analysis.</p>
   <p>We are currently working on a new version that will be more flexible and generalizable. <b>Stay tuned!</b></p>
-  <img src="{{ site.baseurl }}/public/ckg.jpeg" style="width:100%">
+  <a href="#zoom-ckg-workflow">
+    <img src="{{ site.baseurl }}/public/ckg.jpeg"
+        alt="ckg Workflow"
+        style="cursor: zoom-in; max-width: 100%;">
+  </a>
+  <!-- Zoom overlay -->
+  <div id="zoom-ckg-workflow" class="zoom-overlay">
+    <a href="#ckg-workflow" style="text-decoration: none;">
+      <img src="{{ site.baseurl }}/public/ckg.jpeg"
+          alt="zoomed ckg Workflow"
+          style="max-width: 90%; max-height: 90%; cursor: zoom-out;
+                  transform: translate(5%, -5%);">
+    </a>
+  </div>
 </details>
 
 
@@ -32,29 +45,34 @@ permalink: /tools/
 
 <details open>
   <summary>VueGen</summary>  
-
   <div style="text-align: center; margin-bottom: 20px;">
     <a href="https://github.com/Multiomics-Analytics-Group/vuegen" target="_blank">
       <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuegen/main/docs/images/vuegen_logo.svg" alt="VueGen" width="250px">
     </a>
   </div>
-
   <p><b>VueGen</b> is a tool that automates the creation of <b>reports</b> from bioinformatics outputs, allowing researchers with minimal coding experience to communicate their results effectively. With VueGen, users can produce reports by simply specifying a directory containing output files, such as plots, tables, networks, Markdown text, HTML components, and API calls, along with the report format. Supported formats include <b>documents</b> (PDF, HTML, DOCX, ODT), <b>presentations</b> (PPTX, Reveal.js), <b>Jupyter notebooks</b> and <a href="https://streamlit.io/"><b>Streamlit</b></a> <b>web applications</b>.</p>
-
   <p>An overview of the VueGen workflow is shown in the figure below:</p>
-
-  <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuegen/main/docs/images/vuegen_graph_abstract.png">
-
+  <a href="#zoom-vuegen-workflow">
+    <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuegen/main/docs/images/vuegen_graph_abstract.png"
+        alt="VueGen Workflow"
+        style="cursor: zoom-in; max-width: 100%;">
+  </a>
+  <!-- Zoom overlay -->
+  <div id="zoom-vuegen-workflow" class="zoom-overlay">
+    <a href="#vuegen-workflow" style="text-decoration: none;">
+      <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuegen/main/docs/images/vuegen_graph_abstract.png"
+          alt="Zoomed_VueGen Workflow"
+          style="max-width: 90%; max-height: 90%; cursor: zoom-out;
+                  transform: translate(5%, -5%);">
+    </a>
+  </div>
   <p>VueGen offers various implementation options for both non-technical and experienced users. It is available as a <a href="https://pypi.org/project/vuegen/">Python package</a>, <a href="https://quay.io/repository/dtu_biosustain_dsp/vuegen">Docker image</a>, <a href="https://github.com/Multiomics-Analytics-Group/nf-vuegen/">nf-core module</a>, and <a href="https://github.com/Multiomics-Analytics-Group/vuegen/releases/tag/v0.3.2">cross-platform desktop application</a> with a user-friendly interface, making it accessible and customizable for different user needs and expertise levels.</p>
-
   <p>The documentation is available at <a href="https://vuegen.readthedocs.io/">vuegen.readthedocs.io</a>, where you can find detailed information of the package’s classes and functions, installation and execution instructions, and case studies to demonstrate its functionality.</p>
-
 </details>
 
 
 <details open>
   <summary>FermentDB</summary>
-
   <h3>A Standard Data Model for Precision Fermentation</h3>
   <div style="text-align: justify; margin: 2em 0;">
   <b>FermentDB</b> is a platform for bioprocess data <i>Integration</i>, <i>Analysis</i> and <i>Visualization</i>.<br><br>
@@ -63,17 +81,15 @@ permalink: /tools/
     It also supports the upscaling of research through descriptive analytics for fermentation monitoring, enabling more efficient scaling of biomanufacturing and reducing time to market for new bioproducts.<br><br> 
     By enabling seamless integration of new datasets from collaborators, including omics data and in silico testing and optimization, FermentDB reduces time and resource demands and accelerates innovation in biomanufacturing.
   </div>
-
   <p>A graphical image of FermentDB workflow is shown in the figure below:</p>
-  <a href="#zoomed">
+  <a href="#zoom-fermentdb-workflow">
     <img src="{{ site.baseurl }}/public/assets/graphical_abst_fermentDB.png"
         alt="Graphical_Abstract"
         style="cursor: zoom-in; max-width: 100%;">
   </a>
-
   <!-- Zoom overlay -->
-  <div id="zoomed" class="zoom-overlay">
-    <a href="#" style="text-decoration: none;">
+  <div id="zoom-fermentdb-workflow" class="zoom-overlay">
+    <a href="#fermentdb-workflow" style="text-decoration: none;">
       <img src="{{ site.baseurl }}/public/assets/graphical_abst_fermentDB.png"
           alt="Zoomed_Image"
           style="max-width: 90%; max-height: 90%; cursor: zoom-out;
@@ -81,9 +97,7 @@ permalink: /tools/
     </a>
   </div>
   <p>FermentDB is freely available on the website<a href="fermentdb.streamlit.app">fermentdb.streamlit.app</a></p>
-  
   <p style="text-align: justify;">The application code is publicly  available in GitGub: <a href="https://github.com/Multiomics-Analytics-Group/FermentDB"> FermentDB Graph </a> and <a href="https://github.com/Multiomics-Analytics-Group/fermentdb_api"> FermentDB API</a>.</p>
-
 </details>
 
 
