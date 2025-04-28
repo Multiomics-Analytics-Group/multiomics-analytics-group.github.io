@@ -384,6 +384,10 @@ summary:hover {
   color: rgb(134,184,212);
 }
 
+summary.research {
+  font-size: 1.25rem;
+}
+
 /* Zooming sections */
 .zoom-overlay {
   display: none;
