@@ -53,6 +53,41 @@ permalink: /tools/
 
 
 <details open>
+  <summary>FermentDB</summary>
+
+  <h3>A Standard Data Model for Precision Fermentation</h3>
+  <div style="text-align: justify; margin: 2em 0;">
+  <b>FermentDB</b> is a platform for bioprocess data <i>Integration</i>, <i>Analysis</i> and <i>Visualization</i>.<br><br>
+    It is designed to address key challenges in precision fermentation by establishing a community standard for biofoundries. It streamlines the integration of high-throughput bioprocess data, supporting the development and scaling of biosustainable production processes.<br><br>
+    As an open-source database, FermentDB addresses the main obstacles related to FAIR data principles. By providing a standardized data model, it offers the scientific community a powerful computational tool for bioprocess data integration.<br><br>
+    It also supports the upscaling of research through descriptive analytics for fermentation monitoring, enabling more efficient scaling of biomanufacturing and reducing time to market for new bioproducts.<br><br> 
+    By enabling seamless integration of new datasets from collaborators, including omics data and in silico testing and optimization, FermentDB reduces time and resource demands and accelerates innovation in biomanufacturing.
+  </div>
+
+  <p>A graphical image of FermentDB workflow is shown in the figure below:</p>
+  <a href="#zoomed">
+    <img src="{{ site.baseurl }}/public/assets/graphical_abst_fermentDB.png"
+        alt="Graphical_Abstract"
+        style="cursor: zoom-in; max-width: 100%;">
+  </a>
+
+  <!-- Zoom overlay -->
+  <div id="zoomed" class="zoom-overlay">
+    <a href="#" style="text-decoration: none;">
+      <img src="{{ site.baseurl }}/public/assets/graphical_abst_fermentDB.png"
+          alt="Zoomed_Image"
+          style="max-width: 90%; max-height: 90%; cursor: zoom-out;
+                  transform: translate(5%, -5%);">
+    </a>
+  </div>
+  <p>FermentDB is freely available on the website<a href="fermentdb.streamlit.app">fermentdb.streamlit.app</a></p>
+  
+  <p style="text-align: justify;">The application code is publicly  available in GitGub: <a href="https://github.com/Multiomics-Analytics-Group/FermentDB"> FermentDB Graph </a> and <a href="https://github.com/Multiomics-Analytics-Group/fermentdb_api"> FermentDB API</a>.</p>
+
+</details>
+
+
+<details open>
   <summary>Additional Tool (Template)</summary>  
 
   <img src="url or path to img" width="10%" alt="example icon">
