@@ -383,3 +383,19 @@ summary {
 summary:hover {
   color: rgb(134,184,212);
 }
+
+/* Zooming sections */
+.zoom-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.zoom-overlay:target {
+  display: flex;  
+}

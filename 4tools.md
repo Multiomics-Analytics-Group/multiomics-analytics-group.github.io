@@ -86,6 +86,7 @@ permalink: /tools/
 
 </details>
 
+
 <details open>
   <summary>Additional Tool (Template)</summary>  
 
@@ -98,20 +99,3 @@ permalink: /tools/
   <p>More text here if you want</p>
 
 </details>
-
-<style>
-  .zoom-overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: white;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-
-  .zoom-overlay:target {
-    display: flex;  
-  }
-</style>
