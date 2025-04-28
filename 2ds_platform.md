@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Data Science Platform
+title: DS Platform
 permalink: /data-science-platform/
 ---
 

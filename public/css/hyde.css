@@ -384,6 +384,11 @@ summary:hover {
   color: rgb(134,184,212);
 }
 
+summary.research {
+  font-size: 1.25rem;
+}
+
+/* Figures */
 /* Zooming sections */
 .zoom-overlay {
   display: none;
@@ -398,4 +403,12 @@ summary:hover {
 
 .zoom-overlay:target {
   display: flex;  
+}
+
+/* Additional figure formatting */
+p.figure {
+  font-size: 0.8rem;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
 }
