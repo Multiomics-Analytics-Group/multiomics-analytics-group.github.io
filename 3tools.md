@@ -109,7 +109,7 @@ permalink: /tools/
 </details>
 
 
-<details open>
+<!-- <details open>
   <summary>Additional Tool (Template)</summary>  
 
   <img src="url or path to img" width="10%" alt="example icon">
@@ -120,4 +120,4 @@ permalink: /tools/
 
   <p>More text here if you want</p>
 
-</details>
+</details> -->
