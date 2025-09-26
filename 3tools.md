@@ -37,17 +37,33 @@ permalink: /tools/
 
 <details open>
   <summary>Analytics Core (Acore) Library</summary>  
-  <p>Acore, short for analytics core, is an open-source Python library to preprocess and analyse multi-omics data. It includes functionality related to preprocessing, e.g. for data normalization, missing value imputation or feature selection, and functionality for statistical data analysis, e.g. an analysis of covariance.</p> 
+    <div style="text-align: center; margin-bottom: 20px;">
+    <a href="https://github.com/Multiomics-Analytics-Group/acore" target="_blank">
+      <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/acore/main/docs/images/logo/acore_logo.svg" alt="ACore" width="250px">
+    </a>
+  </div>
+  <p><b>Acore</b>, short for analytics core, is an open-source Python library to <b>preprocess and analyse multi-omics data</b>. It includes functionality related to preprocessing, e.g. for data normalization, missing value imputation or feature selection, and functionality for statistical data analysis, e.g. an analysis of covariance.</p> 
   <p>Acore is designed to be user-friendly and flexible, allowing users to easily apply different analysis strategies, testing effects of choosing specific steps.</p>
   <h4>Check out current recipes and the core libary documentation at <a href="https://analytics-core.readthedocs.io/">analytics-core.readthedocs.io</a></h4>
 </details>
 
+<details open>
+  <summary>Visualization Core (VueCore) Library</summary>  
+    <div style="text-align: center; margin-bottom: 20px;">
+    <a href="https://github.com/Multiomics-Analytics-Group/vuecore" target="_blank">
+      <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuecore/main/docs/images/logo/vuecore_logo.svg" alt="VueCore" width="250px">
+    </a>
+  </div>
+  <p><b>VueCore</b> is a Python package for creating <b>interactive and static visualizations</b> of multi-omics data. It provides a user-friendly and high-level abstraction over complex plotting libraries, allowing researchers to generate a wide range of figures with minimal code.</p> 
+  <p>This tool implements defaults for quick plotting, while also exposing the underlying plot objects for further customization. The package is designed with a <b>modular and engine-agnostic architecture</b>, with initial support for <a href="https://plotly.com/">Plotly</a> and a foundation for adding more plotting libraries in the future.</p>
+  <p>The documentation is available at <a href="https://vuecore.readthedocs.io/">vuecore.readthedocs.io</a>, where you can find installation instructions, the API reference, and example notebooks demonstrating its functionality.</p>
+</details>
 
 <details open>
   <summary>VueGen</summary>  
   <div style="text-align: center; margin-bottom: 20px;">
     <a href="https://github.com/Multiomics-Analytics-Group/vuegen" target="_blank">
-      <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuegen/main/docs/images/vuegen_logo.svg" alt="VueGen" width="250px">
+      <img src="https://raw.githubusercontent.com/Multiomics-Analytics-Group/vuegen/main/docs/images/logo/vuegen_logo.svg" alt="VueGen" width="250px">
     </a>
   </div>
   <p><b>VueGen</b> is a tool that automates the creation of <b>reports</b> from bioinformatics outputs, allowing researchers with minimal coding experience to communicate their results effectively. With VueGen, users can produce reports by simply specifying a directory containing output files, such as plots, tables, networks, Markdown text, HTML components, and API calls, along with the report format. Supported formats include <b>documents</b> (PDF, HTML, DOCX, ODT), <b>presentations</b> (PPTX, Reveal.js), <b>Jupyter notebooks</b> and <a href="https://streamlit.io/"><b>Streamlit</b></a> <b>web applications</b>.</p>
