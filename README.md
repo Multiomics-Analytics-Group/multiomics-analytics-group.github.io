@@ -17,6 +17,7 @@ Included are instructions for how to update the team website with a focus on the
     - [Updating an existing page](#updating-an-existing-page)
     - [Adding a page (example)](#adding-a-page-example)
     - [Updating side nav links](#updating-side-nav-links)
+  - [Publications, tools and courses (automated)](#publications-tools-and-courses-automated)
   - [Updating the styling ](#updating-the-styling)
   - [Original Author](#original-author)
   - [License](#license)
@@ -145,6 +146,55 @@ Let's say you want to add a 'Contact' page and it should appear as the last opti
 - similar steps to those in [Updating an existing page](#updating-an-existing-page)
 - However, the file that needs to be updated is `/_includes/sidebar.html`
 - Look for the `sidebar-nav-item` tags
+
+
+## Publications, tools and courses (automated)
+
+The **Research → Publications**, **Tools** and **Education → Courses** lists are generated automatically from three link lists. You only add a URL; a GitHub Actions workflow does the rest.
+
+| Page | File to edit | What is extracted |
+|------|--------------|-------------------|
+| Research (Publications) | [`_content/publications.yml`](_content/publications.yml) | title, authors, date, journal/preprint server, abstract and a figure (Figure 1 for bioRxiv/medRxiv) |
+| Tools | [`_content/tools.yml`](_content/tools.yml) | README title, repository description, opening README paragraph(s), "Features" bullets, first suitable README image, topics |
+| Education (Courses) | [`_content/courses.yml`](_content/courses.yml) | README title, opening paragraph(s), "Objectives" bullets, "Keywords", first suitable README image |
+
+Entries are shown **newest to oldest** (publication date, or repository creation date for tools and courses).
+
+#### Adding an item
+
+1. Create a branch and add an entry to the right file, e.g.
+   ```yaml
+   - url: https://www.biorxiv.org/content/10.64898/2026.10.27.762128v1
+   ```
+2. Open a pull request. The workflow **Update publications, tools and courses** checks that every link can be resolved and uploads the generated data as an artifact (`generated-content`) so you can review it.
+3. Merge. On `master` the workflow regenerates `_data/auto_*.json` and the images in `public/auto/`, commits them, and GitHub Pages rebuilds the site.
+
+#### Overriding what is extracted
+
+Any field can be set by hand in the YAML entry and takes priority over the fetched value, for example when no figure can be downloaded or a README image is not the one you want:
+
+```yaml
+- url: https://github.com/Multiomics-Analytics-Group/course_multi-omics_analysis
+  image: https://raw.githubusercontent.com/Multiomics-Analytics-Group/course_multi-omics_analysis/main/figures/overview.png
+  date: 2026-05-01
+  highlights:
+    - Process MS-based proteomics and metabolomics data in Python
+    - Integrate multi-omics data with networks
+```
+
+Common overrides: `title`, `date`, `image` (URL or repo path like `public/assets/fig.png`), `abstract` (publications), `summary` / `highlights` / `description` / `keywords` (tools and courses), `hidden: true` (hide without deleting).
+
+#### Running it locally
+
+```bash
+pip install -r scripts/requirements.txt
+python scripts/update_site_content.py            # only new/changed entries
+python scripts/update_site_content.py --refresh  # re-fetch everything
+```
+
+The workflow can also be run by hand from the **Actions** tab (tick *refresh* to re-fetch everything), and it refreshes everything automatically on the 1st of each month.
+
+:warning: Do not edit `_data/auto_*.json` or `public/auto/` by hand; they are overwritten by the workflow. Hand-written tools and courses already on the pages are kept below the generated ones.
 
 
 ##  Updating the styling 
