@@ -1,0 +1,37 @@
+[
+  {
+    "id": "multiomics-analytics-group-course-multi-omics-analysis",
+    "url": "https://github.com/Multiomics-Analytics-Group/course_multi-omics_analysis",
+    "repo": "Multiomics-Analytics-Group/course_multi-omics_analysis",
+    "title": "Multi-omics Data Analysis",
+    "description": "",
+    "summary_html": "<p>The <b>omics revolution</b> produces data faster than it produces understanding. Turning a mass spectrometer's output into a biological claim takes a chain of decisions — how to process, filter, normalise, test, annotate and integrate — and each link in that chain can change the answer.</p><p>This <b>three-day intensive course</b> offers practical, up-to-date training in <b>data science applied to omics data</b>, with a focus on <b>mass-spectrometry proteomics and metabolomics</b> and on <b>multi-omics integration</b>.</p>",
+    "summary": "The omics revolution produces data faster than it produces understanding. Turning a mass spectrometer's output into a biological claim takes a chain of decisions — how to process, filter, normalise, test, annotate and integrate — and each link in that chain can change the answer. This three-day intensive course offers practical, up-to-date training in data science applied to omics data, with a focus on mass-spectrometry proteomics and metabolomics and on multi-omics integration.",
+    "highlights": [],
+    "keywords": [
+      "Proteomics",
+      "metabolomics",
+      "multi-omics integration",
+      "mass spectrometry",
+      "networks",
+      "Nextflow",
+      "nf-core",
+      "Python",
+      "data science",
+      "reproducibility",
+      "open science"
+    ],
+    "homepage": null,
+    "date": "2026-08-24",
+    "updated": "2026-09-04",
+    "language": "Jupyter Notebook",
+    "license": "Apache-2.0",
+    "stars": 1,
+    "image": "public/auto/courses/multiomics-analytics-group-course-multi-omics-analysis.jpg",
+    "image_source": "https://opengraph.githubassets.com/1/Multiomics-Analytics-Group/course_multi-omics_analysis",
+    "year": "2026",
+    "source_url": "https://github.com/Multiomics-Analytics-Group/course_multi-omics_analysis",
+    "source_hash": "79746a625e93",
+    "featured": false
+  }
+]
