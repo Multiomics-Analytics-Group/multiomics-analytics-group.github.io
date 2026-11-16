@@ -35,20 +35,6 @@ active:
     email: anglup@dtu.dk
     photo: public/assets/people/ALP.jpeg
 
-  - name: Sebastian
-    surname: Ayala Ruano
-    position: Research Assistant
-    team: Multi-omics Network Analytics (MoNA)
-    email: asaru@dtu.dk
-    photo: public/assets/people/asar.jpg
-
-  - name: Txell
-    surname: Amigo
-    position: Research Assistant
-    team: Multi-omics Network Analytics (MoNA)
-    email: txeami@dtu.dk
-    photo: public/assets/people/txell.jpeg
-
   - name: Marco
     surname: Reverenna
     position: PhD Student
@@ -85,46 +71,45 @@ active:
     email: s243564@dtu.dk
     photo: public/assets/people/edir.jpeg
 
+alumni:
+  - name: Sebastian
+    surname: Ayala Ruano
+    position: Research Assistant
+    team: IRB Barcelona -- Mechanisms of Disease Unit
+    photo: public/assets/people/asar.jpg
+
+  - name: Txell
+    surname: Amigo
+    position: Research Assistant
+    team: BRIGHT Informatics platform
+    photo: public/assets/people/txell.jpeg
+  
   - name: Albert
     surname: Pallejà Caro
     position: Team Lead Data Science Platform
-    team: Data Science Platform
-    email: apca@dtu.dk
+    team: BRIGHT Informatics platform
     photo: public/assets/people/APC.jpeg
-
-  - name: Jakob B.
-    surname: Jespersen
-    position: Data Scientist
-    team: Data Science Platform
-    email: jbeje@dtu.dk
-    photo: public/assets/people/JBJ.jpeg
 
   - name: Henry
     surname: Webel
     position: Senior Data Scientist
-    team: Data Science Platform
-    email: heweb@dtu.dk
+    team: BRIGHT Informatics platform
     photo: public/assets/people/hw.jpeg
 
   - name: Juliana
     surname: Assis
     position: Senior Data Scientist
-    team: Data Science Platform
-    email: jasge@dtu.dk
+    team: BRIGHT Informatics platform
     photo: public/assets/people/jasge.jpeg
 
   - name: Sebastian
     surname: Schulz
     position: Senior Data Scientist
-    team: Data Science Platform
-    email: sebschu@dtu.dk
+    team: BRIGHT Informatics platform
     photo: public/assets/people/sebschu.jpeg
 
-alumni:
-  # Example:
-  # - name: Jane
-  #   surname: Doe
-  #   position: PhD Student
-  #   years: 2020-2024
-  #   now: Data Scientist at Company X
-  #   photo: public/assets/people/jane_doe.jpg
+  - name: Jakob B.
+    surname: Jespersen
+    position: Data Scientist
+    team: BRIGHT Informatics platform
+    photo: public/assets/people/JBJ.jpeg
