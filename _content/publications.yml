@@ -1,11 +1,16 @@
 # Publications shown on the Research page (newest first, sorted automatically by date).
 #
-# Add one entry per paper. Only `url` is required: a bioRxiv/medRxiv link, a
-# https://doi.org/... link or a journal article URL that contains the DOI.
-# The CI workflow fetches title, authors, date, abstract and a figure.
+# Add one entry per paper. Only `url` is required. Supported links:
+#   - https://doi.org/<DOI> (always works) and any URL containing the DOI
+#   - bioRxiv / medRxiv
+#   - nature.com/articles/..., academic.oup.com/<journal>/article/...,
+#     sciencedirect.com/.../pii/..., cell.com (PII), PubMed and PMC links
+#   - other journal pages, if they expose a citation_doi meta tag
+# The CI workflow fetches title, authors, date, journal, abstract (Crossref /
+# Europe PMC) and a figure (Figure 1 or graphical abstract when available).
 #
 # Optional fields override what is fetched automatically:
-#   title, authors (list), date (YYYY-MM-DD), venue, abstract,
+#   doi, title, authors (list), date (YYYY-MM-DD), venue, abstract,
 #   image (URL or repo path such as public/assets/my_figure.png),
 #   image_caption, hidden (true = keep the entry but do not show it)
 #

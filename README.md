@@ -154,7 +154,7 @@ The **Research → Publications**, **Tools** and **Education → Courses** lists
 
 | Page | File to edit | What is extracted |
 |------|--------------|-------------------|
-| Research (Publications) | [`_content/publications.yml`](_content/publications.yml) | title, authors, date, journal/preprint server, abstract and a figure (Figure 1 for bioRxiv/medRxiv) |
+| Research (Publications) | [`_content/publications.yml`](_content/publications.yml) | title, authors, date, journal/preprint server, abstract and a figure (Figure 1 or graphical abstract). Works with DOI links, bioRxiv/medRxiv, Nature, OUP, ScienceDirect/Cell, PubMed/PMC and pages exposing `citation_doi` |
 | Tools | [`_content/tools.yml`](_content/tools.yml) | README title, repository description, opening README paragraph(s), "Features" bullets, first suitable README image, topics |
 | Education (Courses) | [`_content/courses.yml`](_content/courses.yml) | README title, opening paragraph(s), "Objectives" bullets, "Keywords", first suitable README image |
 
