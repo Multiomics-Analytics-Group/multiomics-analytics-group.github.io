@@ -12,6 +12,10 @@ Our courses are designed typically following a short-training format, ranging fr
 
 # Courses
 
+<!-- Courses generated automatically from _content/courses.yml (newest first). -->
+{% include auto_courses.html %}
+
+<!-- Hand-written courses -->
 ## Protein Language Models [[link]](https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling)
 
 <img src="https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling/blob/main/img/nb_logo.png?raw=1" width="600">

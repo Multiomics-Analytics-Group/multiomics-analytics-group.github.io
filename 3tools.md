@@ -4,6 +4,11 @@ title: Tools
 permalink: /tools/
 ---
 
+<!-- Tools generated automatically from _content/tools.yml (newest first). -->
+{% include auto_tools.html %}
+
+<!-- Hand-written tools -->
+
 <details open>
   <summary>Clinical Knowledge Graph - CKG</summary>
   <h3>Integrating and Interpreting MS-based Proteomics Data</h3>

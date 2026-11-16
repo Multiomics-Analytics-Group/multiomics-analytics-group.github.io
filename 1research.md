@@ -99,4 +99,5 @@ permalink: /research/
 
 # Publications
 
-Ayala-Ruano, S., Webel, H., & Santos, A. (2025). _VueGen: Automating the generation of scientific reports_. bioRxiv. [https://doi.org/10.1101/2025.03.05.641152](https://doi.org/10.1101/2025.03.05.641152)
+<!-- Generated automatically from _content/publications.yml (newest first). -->
+{% include auto_publications.html %}
