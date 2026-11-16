@@ -103,17 +103,3 @@ permalink: /tools/
   <p><b>gdbcore</b> is a python library that can take your tables and transform them into graph databases in Networkx, graph-tool or Neo4j (v4). gdbcore is available for installation from <a href="https://pypi.org/project/gdbcore/">PyPI</a>.</p>
   <p>We are currently improving the project and the documentation. <b>Stay tuned!</b></p>
 </details>
-
-
-<details open>
-  <summary>Additional Tool (Template)</summary>  
-
-  <img src="url or path to img" width="10%" alt="example icon">
-
-  <p>Paragraph of text inside</p>
-
-  <h2>This is a subheader in the collapsable section.</h2>
-
-  <p>More text here if you want</p>
-
-</details>
