@@ -18,6 +18,7 @@ Included are instructions for how to update the team website with a focus on the
     - [Adding a page (example)](#adding-a-page-example)
     - [Updating side nav links](#updating-side-nav-links)
   - [Publications, tools and courses (automated)](#publications-tools-and-courses-automated)
+  - [People page (automated)](#people-page-automated)
   - [Updating the styling ](#updating-the-styling)
   - [Original Author](#original-author)
   - [License](#license)
@@ -195,6 +196,33 @@ python scripts/update_site_content.py --refresh  # re-fetch everything
 The workflow can also be run by hand from the **Actions** tab (tick *refresh* to re-fetch everything), and it refreshes everything automatically on the 1st of each month. Because `master` only accepts changes through pull requests, these runs open a PR (`Update auto-generated site content`) that you merge to publish.
 
 :warning: Do not edit `_data/auto_*.json` or `public/auto/` by hand; they are overwritten by the workflow. Hand-written tools and courses already on the pages are kept below the generated ones.
+
+
+## People page (automated)
+
+The **People** page is generated from [`_content/people.yml`](_content/people.yml), which has two sections: `active` (current team) and `alumni`.
+
+```yaml
+active:
+  - name: Jane
+    surname: Doe
+    position: PhD Student          # or a list for several roles
+    team: Multi-omics Network Analytics (MoNA)   # optional group heading
+    email: jado@dtu.dk                           # optional
+    photo: public/assets/people/jane_doe.jpg     # optional
+alumni:
+  - name: John
+    surname: Roe
+    position: Postdoc
+    years: 2021-2024                             # optional
+    now: Data Scientist at Company X             # optional
+```
+
+- Put the original photo in `public/assets/people/` (any size or format). The workflow crops it to a square, resizes it and stores it in `public/auto/people/`, so every card looks the same. People without a photo get a card with their initials.
+- If a crop cuts the face, add `photo_focus` (0 = top, 0.5 = centre; default 0.25) and/or `photo_zoom` (e.g. `1.3` to zoom in on a photo taken from far away).
+- Optional links: `website`, `github`, `linkedin`, `orcid`, `scholar`, `bluesky`, `x` (a full URL or just the handle/ID).
+- To move someone to alumni, cut their entry from `active` and paste it under `alumni`.
+- Open a pull request as for publications, tools and courses: the workflow adds the processed photos to your branch.
 
 
 ##  Updating the styling 
