@@ -166,8 +166,8 @@ Entries are shown **newest to oldest** (publication date, or repository creation
    ```yaml
    - url: https://www.biorxiv.org/content/10.64898/2026.10.27.762128v1
    ```
-2. Open a pull request. The workflow **Update publications, tools and courses** checks that every link can be resolved and uploads the generated data as an artifact (`generated-content`) so you can review it.
-3. Merge. On `master` the workflow regenerates `_data/auto_*.json` and the images in `public/auto/`, commits them, and GitHub Pages rebuilds the site.
+2. Open a pull request. The workflow **Update publications, tools and courses** checks that every link can be resolved, generates `_data/auto_*.json` and the images in `public/auto/`, and commits them to your PR branch (pull before pushing more changes).
+3. Review the generated commit and merge. GitHub Pages rebuilds the site.
 
 #### Overriding what is extracted
 
@@ -192,7 +192,7 @@ python scripts/update_site_content.py            # only new/changed entries
 python scripts/update_site_content.py --refresh  # re-fetch everything
 ```
 
-The workflow can also be run by hand from the **Actions** tab (tick *refresh* to re-fetch everything), and it refreshes everything automatically on the 1st of each month.
+The workflow can also be run by hand from the **Actions** tab (tick *refresh* to re-fetch everything), and it refreshes everything automatically on the 1st of each month. Because `master` only accepts changes through pull requests, these runs open a PR (`Update auto-generated site content`) that you merge to publish.
 
 :warning: Do not edit `_data/auto_*.json` or `public/auto/` by hand; they are overwritten by the workflow. Hand-written tools and courses already on the pages are kept below the generated ones.
 
