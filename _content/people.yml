@@ -1,0 +1,130 @@
+# Team members shown on the People page.
+#
+# Two sections: `active` (current team) and `alumni`. People are shown in the
+# order of this file, grouped by `team` (groups appear in order of first use).
+#
+# Fields:
+#   name, surname        required (surname may be empty)
+#   position             text, or a list for several roles
+#   photo                repo path (put originals in public/assets/people/) or URL.
+#                        Any size/format: the workflow crops it to a square,
+#                        resizes it and stores it in public/auto/people/.
+#                        Without a photo the card shows the person's initials.
+#   team                 optional group heading, e.g. "Data Science Platform"
+#   email, website, github, linkedin, orcid, scholar, bluesky, x   optional links
+#   years                optional, mainly for alumni (e.g. "2021-2024")
+#   now                  optional, alumni: current position
+#   photo_focus          optional crop position for tall photos: 0 = top, 0.5 = centre (default 0.25)
+#   photo_zoom           optional, > 1 crops tighter around the face (e.g. 1.3)
+#   hidden               true = keep the entry but do not show it
+
+active:
+  - name: Alberto
+    surname: Santos
+    position:
+      - Group Lead
+      - Director, Informatics Platform
+    team: Multi-omics Network Analytics (MoNA)
+    email: albsad@dtu.dk
+    photo: public/assets/people/ASD.jpeg
+
+  - name: Angel L.
+    surname: Phanthanourak
+    position: PhD Student
+    team: Multi-omics Network Analytics (MoNA)
+    email: anglup@dtu.dk
+    photo: public/assets/people/ALP.jpeg
+
+  - name: Sebastian
+    surname: Ayala Ruano
+    position: Research Assistant
+    team: Multi-omics Network Analytics (MoNA)
+    email: asaru@dtu.dk
+    photo: public/assets/people/asar.jpg
+
+  - name: Txell
+    surname: Amigo
+    position: Research Assistant
+    team: Multi-omics Network Analytics (MoNA)
+    email: txeami@dtu.dk
+    photo: public/assets/people/txell.jpeg
+
+  - name: Marco
+    surname: Reverenna
+    position: PhD Student
+    team: Multi-omics Network Analytics (MoNA)
+    email: marcor@dtu.dk
+    photo: public/assets/people/marco.jpeg
+    photo_zoom: 1.35
+
+  - name: Jui-Tse
+    surname: Ko
+    position: PhD Student
+    team: Multi-omics Network Analytics (MoNA)
+    email: juik@dtu.dk
+    photo: public/assets/people/juik.jpeg
+
+  - name: Alexander
+    surname: Zubov
+    position: PhD Student
+    team: Multi-omics Network Analytics (MoNA)
+    email: alzub@dtu.dk
+    photo: public/assets/people/alzub.jpeg
+
+  - name: Binhuan
+    surname: Sun
+    position: PhD Student
+    team: Multi-omics Network Analytics (MoNA)
+    email: binsun@dtu.dk
+    photo: public/assets/people/binsun.jpeg
+
+  - name: Edir Sebastian
+    surname: Vidal Castro
+    position: MSc Student & Student Assistant
+    team: Multi-omics Network Analytics (MoNA)
+    email: s243564@dtu.dk
+    photo: public/assets/people/edir.jpeg
+
+  - name: Albert
+    surname: Pallejà Caro
+    position: Team Lead Data Science Platform
+    team: Data Science Platform
+    email: apca@dtu.dk
+    photo: public/assets/people/APC.jpeg
+
+  - name: Jakob B.
+    surname: Jespersen
+    position: Data Scientist
+    team: Data Science Platform
+    email: jbeje@dtu.dk
+    photo: public/assets/people/JBJ.jpeg
+
+  - name: Henry
+    surname: Webel
+    position: Senior Data Scientist
+    team: Data Science Platform
+    email: heweb@dtu.dk
+    photo: public/assets/people/hw.jpeg
+
+  - name: Juliana
+    surname: Assis
+    position: Senior Data Scientist
+    team: Data Science Platform
+    email: jasge@dtu.dk
+    photo: public/assets/people/jasge.jpeg
+
+  - name: Sebastian
+    surname: Schulz
+    position: Senior Data Scientist
+    team: Data Science Platform
+    email: sebschu@dtu.dk
+    photo: public/assets/people/sebschu.jpeg
+
+alumni:
+  # Example:
+  # - name: Jane
+  #   surname: Doe
+  #   position: PhD Student
+  #   years: 2020-2024
+  #   now: Data Scientist at Company X
+  #   photo: public/assets/people/jane_doe.jpg
