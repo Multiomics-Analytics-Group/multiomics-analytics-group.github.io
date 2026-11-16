@@ -78,3 +78,101 @@ details.auto-abstract p {
   background: rgba(134, 184, 212, .2);
   color: #2a5d78;
 }
+
+/* ---------- People page (_includes/auto_people.html) ---------- */
+.people-team {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 2rem;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 1.25rem 1rem 1rem;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+
+.person-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+  transform: translateY(-2px);
+}
+
+.person-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 3px solid rgba(134, 184, 212, .6);
+}
+
+.person-initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2a5d78;
+  background: rgba(134, 184, 212, .25);
+}
+
+.person-name {
+  margin: 0 0 .4rem;
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.person-card p {
+  margin: 0 0 .25rem;
+  font-size: .85rem;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.person-position {
+  color: #6a6a6a;
+}
+
+.person-years,
+.person-now {
+  color: #6a6a6a;
+  font-style: italic;
+}
+
+.person-email {
+  margin-top: auto !important;
+  padding-top: .5rem;
+}
+
+.person-links {
+  font-size: .8rem !important;
+}
+
+/* Alumni: same card, a bit smaller */
+.people-alumni {
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+
+.people-alumni .person-photo {
+  width: 120px;
+  height: 120px;
+  filter: grayscale(35%);
+}
+
+.people-empty {
+  color: #6a6a6a;
+  font-style: italic;
+}
