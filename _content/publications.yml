@@ -1,0 +1,20 @@
+# Publications shown on the Research page (newest first, sorted automatically by date).
+#
+# Add one entry per paper. Only `url` is required: a bioRxiv/medRxiv link, a
+# https://doi.org/... link or a journal article URL that contains the DOI.
+# The CI workflow fetches title, authors, date, abstract and a figure.
+#
+# Optional fields override what is fetched automatically:
+#   title, authors (list), date (YYYY-MM-DD), venue, abstract,
+#   image (URL or repo path such as public/assets/my_figure.png),
+#   image_caption, hidden (true = keep the entry but do not show it)
+#
+# Example:
+# - url: https://doi.org/10.1093/bioinformatics/btaxxxx
+#   image: public/assets/graphical_abstract.png
+
+- url: https://www.biorxiv.org/content/10.64898/2026.11.12.766281v1
+
+- url: https://www.biorxiv.org/content/10.64898/2026.10.27.762128v1
+
+- url: https://doi.org/10.1101/2025.03.05.641152

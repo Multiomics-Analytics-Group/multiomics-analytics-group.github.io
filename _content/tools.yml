@@ -1,0 +1,13 @@
+# Tools shown on the Tools page (newest first, sorted automatically by date).
+#
+# Add one entry per tool. Only `url` is required: a GitHub repository URL
+# (preferred) or a website. From GitHub the CI workflow reads the repository
+# description, the opening paragraph(s) of the README, the bullet list under
+# a "Features"/"Objectives" heading and the first suitable README image.
+#
+# Optional fields override what is fetched automatically:
+#   title, description (subtitle), summary (Markdown), highlights (list),
+#   image (URL or repo path), homepage, keywords (list),
+#   date (YYYY-MM-DD; default = repository creation date), hidden (true/false)
+
+- url: https://github.com/EBI-Metagenomics/mgnipy
