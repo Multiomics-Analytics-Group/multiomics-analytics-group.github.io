@@ -1,0 +1,94 @@
+name: Update publications, tools and courses
+
+# Regenerates _data/auto_*.json and public/auto/** from the link lists in
+# _content/*.yml, then commits the result so GitHub Pages rebuilds the site.
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "_content/**"
+      - "scripts/update_site_content.py"
+      - "scripts/requirements.txt"
+      - ".github/workflows/update-content.yml"
+  pull_request:
+    paths:
+      - "_content/**"
+      - "scripts/update_site_content.py"
+      - "scripts/requirements.txt"
+      - ".github/workflows/update-content.yml"
+  schedule:
+    # 1st of every month: re-fetch everything (new preprint versions, README updates)
+    - cron: "17 4 1 * *"
+  workflow_dispatch:
+    inputs:
+      refresh:
+        description: "Re-fetch every entry (ignore cached data)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-content-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate content
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # higher GitHub API rate limit
+        run: |
+          ARGS=""
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.refresh }}" = "true" ]; then
+            ARGS="$ARGS --refresh"
+          fi
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            ARGS="$ARGS --strict"   # fail the PR check if a link cannot be resolved
+          fi
+          python scripts/update_site_content.py $ARGS
+
+      - name: Show generated changes
+        run: |
+          git add -A _data public/auto
+          git status --short _data public/auto
+          git diff --cached --stat
+
+      - name: Upload preview (pull requests)
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-content
+          path: |
+            _data/auto_*.json
+            public/auto/
+
+      - name: Commit and push
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
+        run: |
+          if git diff --cached --quiet; then
+            echo "No content changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update auto-generated publications, tools and courses"
+          for i in 1 2 3; do
+            git pull --rebase origin master && git push origin HEAD:master && exit 0
+            sleep 5
+          done
+          exit 1
