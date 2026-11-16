@@ -1,0 +1,80 @@
+/* Styles for the auto-generated publications, tools and courses
+   (see _includes/auto_*.html and scripts/update_site_content.py) */
+
+.auto-card {
+  margin-bottom: 2rem;
+}
+
+.auto-publications .pub {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.auto-title {
+  margin-bottom: .25rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+.auto-meta {
+  font-size: .85rem;
+  color: #555;
+  margin-bottom: .75rem;
+}
+
+.auto-figure {
+  display: block;
+  text-align: center;
+}
+
+.auto-figure img {
+  cursor: zoom-in;
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.zoom-overlay .zoom-close {
+  text-decoration: none;
+}
+
+.zoom-overlay .zoom-close img {
+  max-width: 90vw;
+  max-height: 90vh;
+  cursor: zoom-out;
+}
+
+details.auto-abstract {
+  margin-top: .75rem;
+}
+
+details.auto-abstract > summary {
+  font-size: 1rem;
+  color: #313131;
+}
+
+details.auto-abstract p {
+  text-align: justify;
+  font-size: .95rem;
+}
+
+.auto-course-img {
+  max-width: 600px;
+  width: 100%;
+  margin: .5rem 0 1rem;
+}
+
+.auto-links {
+  font-size: .9rem;
+}
+
+.auto-tags span {
+  display: inline-block;
+  font-size: .75rem;
+  padding: .1rem .5rem;
+  margin: 0 .3rem .3rem 0;
+  border-radius: 1rem;
+  background: rgba(134, 184, 212, .2);
+  color: #2a5d78;
+}
