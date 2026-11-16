@@ -6,11 +6,13 @@ Input (edited by people):
     _content/publications.yml   links to papers / preprints (DOI, bioRxiv, journal URL)
     _content/tools.yml          links to tool repositories (GitHub) or websites
     _content/courses.yml        links to course repositories (GitHub) or websites
+    _content/people.yml         team members (active / alumni) with position and photo
 
 Output (generated, committed by CI - do not edit by hand):
     _data/auto_publications.json
     _data/auto_tools.json
     _data/auto_courses.json
+    _data/auto_people.json
     public/auto/<kind>/<slug>.<ext>   downloaded figures / images
 
 Every entry in the input files can override any generated field (title,
@@ -158,6 +160,8 @@ def clean_abstract(text: str) -> str:
 
 
 def slugify(text: str, maxlen: int = 60) -> str:
+    import unicodedata
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode()
     s = re.sub(r"[^a-zA-Z0-9]+", "-", text).strip("-").lower()
     return s[:maxlen].strip("-") or hashlib.sha1(text.encode()).hexdigest()[:10]
 
@@ -1129,17 +1133,164 @@ def process(kind: str, refresh: bool, only: str | None) -> None:
                 f.unlink()
 
 
+# --------------------------------------------------------------------------
+# People
+# --------------------------------------------------------------------------
+PHOTO_SIZE = 480          # every photo becomes a PHOTO_SIZE x PHOTO_SIZE JPEG
+PEOPLE_STATUSES = ("active", "alumni")
+PERSON_LINKS = (  # (yaml key, label, prefix used when only a handle/id is given)
+    ("website", "Website", "https://"),
+    ("github", "GitHub", "https://github.com/"),
+    ("linkedin", "LinkedIn", "https://www.linkedin.com/in/"),
+    ("orcid", "ORCID", "https://orcid.org/"),
+    ("scholar", "Scholar", "https://scholar.google.com/citations?user="),
+    ("bluesky", "Bluesky", "https://bsky.app/profile/"),
+    ("x", "X", "https://x.com/"),
+)
+
+
+def standardize_photo(data: bytes, out: Path, focus_y: float | None = None, zoom: float = 1.0) -> bool:
+    """Square-crop, resize and re-encode a portrait so all cards look alike.
+
+    focus_y: vertical position of the crop for portrait photos (0 = top,
+    0.5 = centre). Faces are usually in the upper part, so the default keeps
+    the top ~third of the extra height above the crop.
+    zoom: > 1 crops tighter around the focus point (e.g. 1.3 for photos taken
+    from far away).
+    """
+    from PIL import ImageOps
+    try:
+        img = Image.open(io.BytesIO(data))
+        img = ImageOps.exif_transpose(img)
+    except Exception:
+        return False
+    if img.mode in ("RGBA", "LA", "P"):
+        bg = Image.new("RGB", img.size, (255, 255, 255))
+        img = img.convert("RGBA")
+        bg.paste(img, mask=img.split()[-1])
+        img = bg
+    else:
+        img = img.convert("RGB")
+    w, h = img.size
+    side = int(min(w, h) / max(zoom, 1.0))
+    fy = 0.25 if focus_y is None else max(0.0, min(1.0, float(focus_y)))
+    left = (w - side) // 2
+    top = int((h - side) * fy) if h > side else 0
+    if zoom > 1.0 and h <= w:  # landscape: centre vertically around the face area
+        top = int((h - side) * (0.35 if focus_y is None else fy))
+    img = img.crop((left, top, left + side, top + side)).resize((PHOTO_SIZE, PHOTO_SIZE), Image.LANCZOS)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    img.save(out, "JPEG", quality=86, optimize=True, progressive=True)
+    return True
+
+
+def load_photo_bytes(src: str) -> bytes | None:
+    if re.match(r"^https?://", src):
+        r = http_get(src, browser=True, retries=2)
+        return r.content if r is not None else None
+    path = ROOT / src.lstrip("/")
+    return path.read_bytes() if path.exists() else None
+
+
+def build_person(p: dict, status: str, idx: int) -> dict | None:
+    name = str(p.get("name") or "").strip()
+    surname = str(p.get("surname") or "").strip()
+    if not name:
+        error(f"people.yml ({status} #{idx + 1}): 'name' is required: {p!r}")
+        return None
+    full = f"{name} {surname}".strip()
+    slug = slugify(full)
+    pos = p.get("position") or []
+    positions = [str(x).strip() for x in (pos if isinstance(pos, list) else [pos]) if str(x).strip()]
+    initials = (name[:1] + (surname.split()[-1][:1] if surname else "")).upper()
+
+    photo = None
+    src = p.get("photo")
+    if src:
+        data = load_photo_bytes(str(src))
+        out = IMG_DIR / "people" / f"{slug}.jpg"
+        if data and standardize_photo(data, out, p.get("photo_focus"), float(p.get("photo_zoom") or 1.0)):
+            photo = f"{SITE_IMG_PREFIX}/people/{out.name}"
+        else:
+            warn(f"people.yml: photo for {full} could not be read ({src}); showing initials instead.")
+
+    links = []
+    for key, label, prefix in PERSON_LINKS:
+        val = str(p.get(key) or "").strip()
+        if not val:
+            continue
+        url = val if re.match(r"^(https?://|mailto:)", val) else prefix + val.lstrip("@")
+        links.append({"label": label, "url": url})
+    email = str(p.get("email") or "").strip()
+    return {
+        "id": slug,
+        "status": status,
+        "name": name,
+        "surname": surname,
+        "full_name": full,
+        "positions": positions,
+        "team": p.get("team") or "",
+        "years": str(p.get("years") or "").strip(),
+        "now": str(p.get("now") or "").strip(),
+        "photo": photo,
+        "initials": initials,
+        "email": email,
+        "links": links,
+    }
+
+
+def process_people() -> None:
+    path = CONTENT_DIR / "people.yml"
+    if not path.exists():
+        return
+    raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    info("\n== people ==")
+    out: dict[str, list] = {}
+    seen = set()
+    for status in PEOPLE_STATUSES:
+        people = []
+        for i, p in enumerate(raw.get(status) or []):
+            if not isinstance(p, dict) or p.get("hidden"):
+                continue
+            person = build_person(p, status, i)
+            if not person:
+                continue
+            if person["id"] in seen:
+                warn(f"people.yml: {person['full_name']} is listed more than once (ignored)")
+                continue
+            seen.add(person["id"])
+            people.append(person)
+            info(f"- {status:6s} {person['full_name']} -> {person['photo'] or 'initials'}")
+        out[status] = people  # file order is kept (e.g. group lead first)
+    unknown = set(raw) - set(PEOPLE_STATUSES)
+    if unknown:
+        warn(f"people.yml: unknown section(s) {sorted(unknown)}; use 'active' and 'alumni'")
+    out_path = DATA_DIR / "auto_people.json"
+    DATA_DIR.mkdir(exist_ok=True)
+    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    info(f"wrote {out_path.relative_to(ROOT)} ({sum(len(v) for v in out.values())} people)")
+
+    used = {Path(x["photo"]).name for v in out.values() for x in v if x.get("photo")}
+    img_dir = IMG_DIR / "people"
+    if img_dir.exists():
+        for f in img_dir.iterdir():
+            if f.is_file() and f.name not in used:
+                f.unlink()
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--kind", choices=KINDS + ("all",), default="all")
+    ap.add_argument("--kind", choices=KINDS + ("people", "all"), default="all")
     ap.add_argument("--refresh", action="store_true", help="ignore cached entries and fetch everything again")
     ap.add_argument("--only", help="re-fetch only entries whose url contains this text")
     ap.add_argument("--strict", action="store_true", help="exit with status 1 if any entry failed")
     args = ap.parse_args()
 
-    kinds = KINDS if args.kind == "all" else (args.kind,)
+    kinds = KINDS if args.kind == "all" else tuple(k for k in (args.kind,) if k in KINDS)
     for kind in kinds:
         process(kind, args.refresh, args.only)
+    if args.kind in ("all", "people"):
+        process_people()
 
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary:
