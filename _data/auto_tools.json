@@ -1,0 +1,33 @@
+[
+  {
+    "id": "ebi-metagenomics-mgnipy",
+    "url": "https://github.com/EBI-Metagenomics/mgnipy",
+    "repo": "EBI-Metagenomics/mgnipy",
+    "title": "MGni.py",
+    "description": "a python sdk for the MGnify API",
+    "summary_html": "<p>MGni.py (🔉<a href=\"https://ipa-reader.com/?text=m%C3%A6%C9%A1ni-pa%C9%AA\">IPA:'mæɡni-paɪ'</a>) is a lightweight python client and toolkit for the <a href=\"https://www.ebi.ac.uk/metagenomics/api/v2/\">MGnify API v2</a>.</p>",
+    "summary": "MGni.py (🔉IPA:'mæɡni-paɪ') is a lightweight python client and toolkit for the MGnify API v2.",
+    "highlights": [
+      "<b>FAIR</b>: More findable MGnify analyses and metadata, returned in familiar metagenomics data formats (e.g., GFF, <a href=\"https://dwc.tdwg.org/\">Darwin Core</a>, Dataframes <a href=\"https://pandas.pydata.org/docs/\">[pandas</a>, <a href=\"https://docs.pola.rs/\">polars</a>, <a href=\"https://anndata.scverse.org/en/stable/\">anndata</a>])",
+      "<b>Simplifies API interactions:</b> Let MGni.Py handle the complexity of building, executing, and parsing API calls so you can focus on the data!",
+      "<b>Fast:</b> MGni.Py uses caching to speed up API expolation, as well as supports both sync and async API calls"
+    ],
+    "keywords": [
+      "metagenomics data",
+      "mgnify",
+      "openapi"
+    ],
+    "homepage": "https://www.ebi.ac.uk/metagenomics",
+    "date": "2026-01-20",
+    "updated": "2026-11-12",
+    "language": "Python",
+    "license": "GPL-3.0",
+    "stars": 1,
+    "image": "https://raw.githubusercontent.com/EBI-Metagenomics/mgnipy/main/docs/assets/mgnipy_figure.gif",
+    "image_source": "https://raw.githubusercontent.com/EBI-Metagenomics/mgnipy/main/docs/assets/mgnipy_figure.gif",
+    "year": "2026",
+    "source_url": "https://github.com/EBI-Metagenomics/mgnipy",
+    "source_hash": "e8ca4b3e1284",
+    "featured": false
+  }
+]
