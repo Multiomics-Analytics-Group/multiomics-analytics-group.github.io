@@ -19,6 +19,9 @@
     {%- endfor %}
   </ul>
   {%- endif %}
+  {%- if course.note %}
+  <blockquote>{{ course.note | escape }}</blockquote>
+  {%- endif %}
   {%- if course.keywords and course.keywords.size > 0 %}
   <p class="auto-tags">{% for k in course.keywords %}<span>{{ k | escape }}</span>{% endfor %}</p>
   {%- endif %}

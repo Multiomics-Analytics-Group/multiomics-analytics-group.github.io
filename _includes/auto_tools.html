@@ -26,6 +26,14 @@
     {%- endfor %}
   </ul>
   {%- endif %}
+  {%- if tool.embed %}
+    {%- if tool.embed contains '://' %}{% assign emb = tool.embed %}{% else %}{% assign emb = site.baseurl | append: '/' | append: tool.embed %}{% endif %}
+  {%- if tool.embed_title %}<h3>{{ tool.embed_title | escape }}</h3>{% endif %}
+  <iframe src="{{ emb }}" width="600" height="450" style="border:0; max-width:100%;" loading="lazy"></iframe>
+  {%- endif %}
+  {%- if tool.note %}
+  <blockquote>{{ tool.note | escape }}</blockquote>
+  {%- endif %}
   <p class="auto-links">
     <a href="{{ tool.url }}" target="_blank" rel="noopener">{% if tool.repo %}GitHub: {{ tool.repo }}{% else %}Website{% endif %}</a>
     {%- if tool.homepage %} &middot; <a href="{{ tool.homepage }}" target="_blank" rel="noopener">Documentation / website</a>{% endif %}
