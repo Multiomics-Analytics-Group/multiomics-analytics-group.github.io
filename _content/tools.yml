@@ -7,7 +7,22 @@
 #
 # Optional fields override what is fetched automatically:
 #   title, description (subtitle), summary (Markdown), highlights (list),
-#   image (URL or repo path), homepage, keywords (list),
+#   image (URL or repo path), homepage, keywords (list), note,
+#   embed (URL or repo path of an HTML page shown in an iframe), embed_title,
 #   date (YYYY-MM-DD; default = repository creation date), hidden (true/false)
 
 - url: https://github.com/EBI-Metagenomics/mgnipy
+
+- url: https://github.com/Multiomics-Analytics-Group/InstaNexus
+
+- url: https://github.com/Multiomics-Analytics-Group/prefer_ontology
+
+- url: https://github.com/Multiomics-Analytics-Group/ale-cooccurrence-mutual-exclusivity-nf
+
+- url: https://github.com/Multiomics-Analytics-Group/OrthoHPI2.0
+  # kept from the previous hand-written entry (not in the README)
+  title: OrthoHPI 2.0
+  description: Orthology-based Host-Parasite Protein-protein Interactions
+  homepage: https://orthohpi.streamlit.app/
+  embed: public/Gi_network.html
+  embed_title: Giardia intestinalis predicted PPI
