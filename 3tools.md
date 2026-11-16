@@ -32,15 +32,6 @@ permalink: /tools/
 
 
 <details open>
-  <summary>OrthoHPI 2.0</summary>
-  <h2>Orthology–based Host–Parasite Protein–protein Interactions <a href="https://orthohpi.streamlit.app/">[link]</a></h2>
-  <p>Understanding host-parasite interactions is vital for tackling infectious diseases. Due to the challenges in experimental identification, we propose a computational method to predict protein interactions between human and 18 eukaryotic parasites. Our approach leverages an orthology-based transfer of interactions, focusing on parasite secretomes and human membrane proteins. We also filter the host proteome based on the parasites' specific tissue tropisms. In this version, we added  cell-type specific expression annotations to provide further resolution of the host-parasite predicted interactions and we support interactions with structural information.</p>
-  <h3>Giardia intestinalis Predicted PPI</h3>
-  <iframe src="{{ site.baseurl }}/public/Gi_network.html" width="600" height="450" style="border:0;"></iframe>
-</details>
-
-
-<details open>
   <summary>Analytics Core (Acore) Library</summary>  
   <p>Acore, short for analytics core, is an open-source Python library to preprocess and analyse multi-omics data. It includes functionality related to preprocessing, e.g. for data normalization, missing value imputation or feature selection, and functionality for statistical data analysis, e.g. an analysis of covariance.</p> 
   <p>Acore is designed to be user-friendly and flexible, allowing users to easily apply different analysis strategies, testing effects of choosing specific steps.</p>

@@ -16,37 +16,6 @@ Our courses are designed typically following a short-training format, ranging fr
 {% include auto_courses.html %}
 
 <!-- Hand-written courses -->
-## Protein Language Models [[link]](https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling)
-
-<img src="https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling/blob/main/img/nb_logo.png?raw=1" width="600">
-
-An up-to-date course at the intersection of language models and the complex world of proteins! This course provides an overview of the current state of the art of Protein Language Models (pML), which are revolutionizing research, discovery, and innovation in the field of molecular biology.
-
-**Objectives**
-
-- Gain a comprehensive understanding of the synergy between language models and protein data
-- Equip students with the skills to leverage pre-trained models and fine-tuning for bioinformatics applications
-- Explore cutting-edge use cases and discover how protein language models are shaping the future of molecular biology
-- Understand the current limitations of the field and be prepared to tackle bioinformatics challenges
-
------------------------
-
-## Networks to Study Microbes [[link]](https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes)
-
-<img src="https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes/blob/main/figures/netmicrobes.png?raw=1" width="500">
-
-The goal of the course is to provide an introduction to the use of networks in microbiology. The students will receive an overview of the field of computational microbiology with special emphasis on data standardization* and data sources, and how to use graph structures to solve biological questions. Further, the students will get a hands on introduction to Python programming language and its scientific libraries. 
-
-**Objectives**
-
-- Use multiple data sources for studying microbes in different biological contexts
-- Build networks, visualize and analyse them using different tools
-- Use Python to extract, transform and analyse different data structures
-
-> **_NOTE:_** Some of the course content is in Spanish, but we are working on an english version. Coming out soon!
-
------------------------
-
 ## Leveraging Existing Biological Data and Making Sense of it [[link]](https://github.com/Multiomics-Analytics-Group/course_synthetic_biology_data)
 
 This course is designed to introduce students to the essential skills required to fully utilize available resources. Further, this course provides an overview of how networks can be used to integrate and analyse these data.
