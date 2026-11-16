@@ -32,7 +32,6 @@ Included are instructions for how to update the team website with a focus on the
 /
 ├── index.md
 ├── 1research.md
-├── 2ds_platform.md
 ├── 3people.md
 ├── 4tools.md
 ├── 5education.md
