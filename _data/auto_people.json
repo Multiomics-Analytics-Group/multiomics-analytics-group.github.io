@@ -1,0 +1,244 @@
+{
+  "active": [
+    {
+      "id": "alberto-santos",
+      "status": "active",
+      "name": "Alberto",
+      "surname": "Santos",
+      "full_name": "Alberto Santos",
+      "positions": [
+        "Group Lead",
+        "Director, Informatics Platform"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/alberto-santos.jpg",
+      "initials": "AS",
+      "email": "albsad@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "angel-l-phanthanourak",
+      "status": "active",
+      "name": "Angel L.",
+      "surname": "Phanthanourak",
+      "full_name": "Angel L. Phanthanourak",
+      "positions": [
+        "PhD Student"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/angel-l-phanthanourak.jpg",
+      "initials": "AP",
+      "email": "anglup@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "sebastian-ayala-ruano",
+      "status": "active",
+      "name": "Sebastian",
+      "surname": "Ayala Ruano",
+      "full_name": "Sebastian Ayala Ruano",
+      "positions": [
+        "Research Assistant"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/sebastian-ayala-ruano.jpg",
+      "initials": "SR",
+      "email": "asaru@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "txell-amigo",
+      "status": "active",
+      "name": "Txell",
+      "surname": "Amigo",
+      "full_name": "Txell Amigo",
+      "positions": [
+        "Research Assistant"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/txell-amigo.jpg",
+      "initials": "TA",
+      "email": "txeami@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "marco-reverenna",
+      "status": "active",
+      "name": "Marco",
+      "surname": "Reverenna",
+      "full_name": "Marco Reverenna",
+      "positions": [
+        "PhD Student"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/marco-reverenna.jpg",
+      "initials": "MR",
+      "email": "marcor@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "jui-tse-ko",
+      "status": "active",
+      "name": "Jui-Tse",
+      "surname": "Ko",
+      "full_name": "Jui-Tse Ko",
+      "positions": [
+        "PhD Student"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/jui-tse-ko.jpg",
+      "initials": "JK",
+      "email": "juik@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "alexander-zubov",
+      "status": "active",
+      "name": "Alexander",
+      "surname": "Zubov",
+      "full_name": "Alexander Zubov",
+      "positions": [
+        "PhD Student"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/alexander-zubov.jpg",
+      "initials": "AZ",
+      "email": "alzub@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "binhuan-sun",
+      "status": "active",
+      "name": "Binhuan",
+      "surname": "Sun",
+      "full_name": "Binhuan Sun",
+      "positions": [
+        "PhD Student"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/binhuan-sun.jpg",
+      "initials": "BS",
+      "email": "binsun@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "edir-sebastian-vidal-castro",
+      "status": "active",
+      "name": "Edir Sebastian",
+      "surname": "Vidal Castro",
+      "full_name": "Edir Sebastian Vidal Castro",
+      "positions": [
+        "MSc Student & Student Assistant"
+      ],
+      "team": "Multi-omics Network Analytics (MoNA)",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/edir-sebastian-vidal-castro.jpg",
+      "initials": "EC",
+      "email": "s243564@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "albert-palleja-caro",
+      "status": "active",
+      "name": "Albert",
+      "surname": "Pallejà Caro",
+      "full_name": "Albert Pallejà Caro",
+      "positions": [
+        "Team Lead Data Science Platform"
+      ],
+      "team": "Data Science Platform",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/albert-palleja-caro.jpg",
+      "initials": "AC",
+      "email": "apca@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "jakob-b-jespersen",
+      "status": "active",
+      "name": "Jakob B.",
+      "surname": "Jespersen",
+      "full_name": "Jakob B. Jespersen",
+      "positions": [
+        "Data Scientist"
+      ],
+      "team": "Data Science Platform",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/jakob-b-jespersen.jpg",
+      "initials": "JJ",
+      "email": "jbeje@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "henry-webel",
+      "status": "active",
+      "name": "Henry",
+      "surname": "Webel",
+      "full_name": "Henry Webel",
+      "positions": [
+        "Senior Data Scientist"
+      ],
+      "team": "Data Science Platform",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/henry-webel.jpg",
+      "initials": "HW",
+      "email": "heweb@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "juliana-assis",
+      "status": "active",
+      "name": "Juliana",
+      "surname": "Assis",
+      "full_name": "Juliana Assis",
+      "positions": [
+        "Senior Data Scientist"
+      ],
+      "team": "Data Science Platform",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/juliana-assis.jpg",
+      "initials": "JA",
+      "email": "jasge@dtu.dk",
+      "links": []
+    },
+    {
+      "id": "sebastian-schulz",
+      "status": "active",
+      "name": "Sebastian",
+      "surname": "Schulz",
+      "full_name": "Sebastian Schulz",
+      "positions": [
+        "Senior Data Scientist"
+      ],
+      "team": "Data Science Platform",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/sebastian-schulz.jpg",
+      "initials": "SS",
+      "email": "sebschu@dtu.dk",
+      "links": []
+    }
+  ],
+  "alumni": []
+}
