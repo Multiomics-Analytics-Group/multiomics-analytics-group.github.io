@@ -22,7 +22,7 @@
     <div id="zoom-pub-{{ pub.id }}" class="zoom-overlay">
       <a href="#pub-{{ pub.id }}" class="zoom-close"><img src="{{ img }}" alt="Zoomed figure: {{ pub.title | escape }}"></a>
     </div>
-    <p class="figure">{% if pub.image_caption %}{{ pub.image_caption }} from {% else %}Figure from {% endif %}{{ pub.authors_short | escape }}{% if pub.year %} ({{ pub.year }}){% endif %}{% if pub.license %}, {{ pub.license | replace: '_', '-' | upcase }}{% endif %}.</p>
+    <p class="figure">{% if pub.image_caption %}{{ pub.image_caption }} from {% else %}Figure from {% endif %}{{ pub.authors_short | escape }}{% if pub.year %} ({{ pub.year }}){% endif %}{% if pub.license %}, {{ pub.license }}{% endif %}.</p>
     {%- endif %}
     {%- if pub.abstract_html and pub.abstract_html != '' %}
     <details class="auto-abstract">

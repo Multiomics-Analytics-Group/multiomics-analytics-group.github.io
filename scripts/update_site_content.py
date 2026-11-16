@@ -51,7 +51,7 @@ IMG_DIR = ROOT / "public" / "auto"
 SITE_IMG_PREFIX = "public/auto"
 
 KINDS = ("publications", "tools", "courses")
-SCHEMA_VERSION = 1  # bump to force regeneration of every cached entry
+SCHEMA_VERSION = 2  # bump to force regeneration of every cached entry
 
 BOT_UA = "MoNA-website-bot/1.0 (+https://multiomics-analytics-group.github.io)"
 BROWSER_UA = (
@@ -69,6 +69,7 @@ SESSION.headers["User-Agent"] = BOT_UA
 _GH_TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 
 FAILURES: list[str] = []
+WARNINGS: list[str] = []
 
 
 # --------------------------------------------------------------------------
@@ -82,6 +83,7 @@ def info(msg: str) -> None:
 
 
 def warn(msg: str) -> None:
+    WARNINGS.append(msg)
     print(f"::warning::{msg}" if IN_CI else f"WARNING: {msg}", flush=True)
 
 
@@ -94,8 +96,10 @@ def error(msg: str) -> None:
 # HTTP helpers
 # --------------------------------------------------------------------------
 def http_get(url: str, *, accept: str | None = None, browser: bool = False,
-             github: bool = False, retries: int = 3) -> requests.Response | None:
+             github: bool = False, retries: int = 3, referer: str | None = None) -> requests.Response | None:
     headers = {}
+    if referer:
+        headers["Referer"] = referer
     if accept:
         headers["Accept"] = accept
     if browser:
@@ -240,11 +244,12 @@ def strip_leading_emoji(text: str) -> str:
 # --------------------------------------------------------------------------
 # Images
 # --------------------------------------------------------------------------
-def download_image(url: str, kind: str, slug: str, *, browser: bool = False) -> str | None:
+def download_image(url: str, kind: str, slug: str, *, browser: bool = False, referer: str | None = None) -> str | None:
     """Download ``url`` into public/auto/<kind>/ and return the site-relative path."""
     if url.startswith(("public/", "/public/")):
         return url.lstrip("/")  # already a local asset in the repository
-    r = http_get(url, browser=browser, accept="image/avif,image/webp,image/png,image/svg+xml,image/*,*/*;q=0.8")
+    r = http_get(url, browser=browser, referer=referer, retries=2,
+                 accept="image/avif,image/webp,image/png,image/svg+xml,image/*,*/*;q=0.8")
     if r is None:
         return None
     ctype = r.headers.get("Content-Type", "").split(";")[0].strip().lower()
@@ -291,13 +296,14 @@ def download_image(url: str, kind: str, slug: str, *, browser: bool = False) -> 
     return f"{SITE_IMG_PREFIX}/{kind}/{out.name}"
 
 
-def try_images(candidates: list[str], kind: str, slug: str, *, browser: bool = False) -> tuple[str | None, str | None]:
+def try_images(candidates: list[str], kind: str, slug: str, *, browser: bool = False,
+               referer: str | None = None) -> tuple[str | None, str | None]:
     seen = set()
     for url in candidates:
         if not url or url in seen:
             continue
         seen.add(url)
-        local = download_image(url, kind, slug, browser=browser)
+        local = download_image(url, kind, slug, browser=browser, referer=referer)
         if local:
             return local, url
     return None, None
@@ -307,29 +313,105 @@ def try_images(candidates: list[str], kind: str, slug: str, *, browser: bool = F
 # Publications
 # --------------------------------------------------------------------------
 DOI_RE = re.compile(r"(10\.\d{4,9}/[^\s\"'<>?#]+)", re.I)
+NATURE_RE = re.compile(r"^https?://(?:www\.)?nature\.com/articles/([a-z0-9][a-z0-9.\-]+)", re.I)
+OUP_RE = re.compile(r"^https?://academic\.oup\.com/([a-z0-9\-]+)/article/(?:[^/]+/)*?([a-z]{2,}[a-z0-9]*\d+[a-z0-9]*)/\d+", re.I)
+PII_RE = re.compile(r"/pii/(S?[0-9X()\-]{15,25})", re.I)
+PUBMED_RE = re.compile(r"pubmed\.ncbi\.nlm\.nih\.gov/(\d+)", re.I)
+PMC_RE = re.compile(r"(PMC\d+)", re.I)
+NATURE_ID_RE = re.compile(r"^s(\d{5})-(\d{3})-(\d{5})-[0-9a-z]$", re.I)
+
+_PAGE_CACHE: dict[str, str | None] = {}
+
+
+def fetch_page(url: str) -> str | None:
+    """Fetch an article landing page once (publishers often block bots; best effort)."""
+    if url not in _PAGE_CACHE:
+        r = http_get(url, browser=True, retries=1)
+        _PAGE_CACHE[url] = r.text[:600_000] if r is not None else None
+    return _PAGE_CACHE[url]
+
+
+def page_meta(page: str | None, *names: str) -> str | None:
+    if not page:
+        return None
+    for name in names:
+        for tag in re.findall(rf"<meta[^>]+(?:name|property)=[\"']{re.escape(name)}[\"'][^>]*>", page, re.I):
+            m = CONTENT_ATTR_RE.search(tag)
+            if m and m.group(1).strip():
+                return html.unescape(m.group(1)).strip()
+    return None
+
+
+def clean_doi(doi: str) -> str:
+    doi = re.sub(r"\.(full|abstract|supplementary-material|article-info|article-metrics)(\.pdf)?$", "", doi)
+    doi = re.sub(r"(\.full-text|/full|/abstract|/epdf|/pdf)$", "", doi, flags=re.I)
+    return doi.rstrip("/.")
+
+
+def doi_from_pii(pii: str) -> str | None:
+    pii = re.sub(r"[^0-9A-Za-z]", "", pii).upper()
+    data = get_json(f"https://api.crossref.org/works?filter=alternative-id:{pii}&rows=1&select=DOI")
+    try:
+        return data["message"]["items"][0]["DOI"]
+    except (TypeError, KeyError, IndexError):
+        return None
+
+
+def doi_from_europepmc(query: str) -> str | None:
+    data = get_json(
+        f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={quote(query)}&resultType=lite&format=json"
+    )
+    try:
+        return data["resultList"]["result"][0].get("doi")
+    except (TypeError, KeyError, IndexError):
+        return None
 
 
 def parse_publication_url(url: str) -> dict:
-    """Extract DOI (+ bioRxiv/medRxiv server & version) from a URL or DOI string."""
-    out = {"doi": None, "server": None, "version": None}
-    parsed = urlparse(url)
-    host = parsed.netloc.lower()
+    """Work out the DOI (+ bioRxiv/medRxiv server & version) of a publication URL.
+
+    Handles URLs that contain the DOI (doi.org, bioRxiv, Springer, Wiley,
+    OUP /article/doi/..., ...) and the common journal URLs that do not:
+    nature.com/articles/<id>, academic.oup.com/<journal>/article/.../<id>/<n>,
+    ScienceDirect / Cell (PII), PubMed and PMC. As a last resort the article
+    page's citation_doi meta tag is used.
+    """
+    out = {"doi": None, "server": None, "version": None, "pii": None}
+    host = urlparse(url).netloc.lower()
     if "biorxiv.org" in host:
         out["server"] = "biorxiv"
     elif "medrxiv.org" in host:
         out["server"] = "medrxiv"
+
     m = DOI_RE.search(url)
     if m:
-        doi = m.group(1)
-        doi = re.sub(r"\.(full|abstract|supplementary-material|article-info|article-metrics)(\.pdf)?$", "", doi)
-        doi = re.sub(r"\.full-text$", "", doi)
+        doi = clean_doi(m.group(1))
         v = re.search(r"v(\d+)$", doi)
         if v and (out["server"] or doi.startswith(BIORXIV_DOI_PREFIXES)):
             out["version"] = int(v.group(1))
             doi = doi[: v.start()]
-        out["doi"] = doi.rstrip("/.")
+        out["doi"] = doi
+    elif (m := NATURE_RE.match(url)):
+        out["doi"] = f"10.1038/{m.group(1)}"
+    elif (m := OUP_RE.match(url)):
+        out["doi"] = f"10.1093/{m.group(1).lower()}/{m.group(2)}"
+    elif (m := PII_RE.search(url)):
+        out["pii"] = re.sub(r"[^0-9A-Za-z]", "", m.group(1)).upper()
+        out["doi"] = doi_from_pii(out["pii"])
+    elif (m := PUBMED_RE.search(url)):
+        out["doi"] = doi_from_europepmc(f"EXT_ID:{m.group(1)} AND SRC:MED")
+    elif (m := PMC_RE.search(url)) and ("ncbi.nlm.nih.gov" in host or "europepmc.org" in host):
+        out["doi"] = doi_from_europepmc(f"PMCID:{m.group(1).upper()}")
+
+    if not out["doi"]:
+        page = fetch_page(url)
+        doi = page_meta(page, "citation_doi", "dc.identifier", "DC.identifier", "prism.doi", "dc.Identifier")
+        if doi:
+            m = DOI_RE.search(doi)
+            out["doi"] = clean_doi(m.group(1)) if m else None
+
     if out["doi"] and not out["server"] and out["doi"].startswith(BIORXIV_DOI_PREFIXES):
-        out["server"] = "biorxiv"  # resolved via api; may also be medRxiv (handled below)
+        out["server"] = "biorxiv"  # the API lookup also tries medRxiv
     return out
 
 
@@ -384,7 +466,6 @@ def fetch_biorxiv(doi: str, server_hint: str | None, version: int | None) -> dic
             "category": rec.get("category"),
             "jatsxml": rec.get("jatsxml"),
             "published_doi": None if rec.get("published") in (None, "", "NA") else rec.get("published"),
-            "first_version_date": normalize_date(coll[0].get("date")),
         }
     return None
 
@@ -408,6 +489,7 @@ def fetch_crossref(doi: str) -> dict | None:
         if "creativecommons" in l.get("URL", ""):
             lic = l["URL"]
             break
+    pii = next((a for a in msg.get("alternative-id") or [] if re.match(r"^S[0-9X]{16}$", a, re.I)), None)
     return {
         "title": strip_tags(title),
         "authors": format_authors_crossref(msg.get("author")),
@@ -415,11 +497,12 @@ def fetch_crossref(doi: str) -> dict | None:
         "abstract": clean_abstract(msg.get("abstract", "")),
         "venue": venue,
         "license": lic,
+        "pii": pii,
         "landing_url": (msg.get("resource") or {}).get("primary", {}).get("URL"),
     }
 
 
-def fetch_europepmc_abstract(doi: str) -> str | None:
+def fetch_europepmc(doi: str) -> dict:
     q = quote(f'DOI:"{doi}"')
     data = get_json(
         f"https://www.ebi.ac.uk/europepmc/webservices/rest/search?query={q}&resultType=core&format=json"
@@ -427,15 +510,22 @@ def fetch_europepmc_abstract(doi: str) -> str | None:
     try:
         res = data["resultList"]["result"][0]
     except (TypeError, KeyError, IndexError):
-        return None
-    return clean_abstract(res.get("abstractText", "")) or None
+        return {}
+    return {
+        "abstract": clean_abstract(res.get("abstractText", "")),
+        "pmcid": res.get("pmcid"),
+        "title": strip_tags(res.get("title", "")).rstrip("."),
+        "date": normalize_date(res.get("firstPublicationDate")),
+        "venue": (res.get("journalInfo") or {}).get("journal", {}).get("title"),
+        "authors": [a.get("fullName") for a in (res.get("authorList") or {}).get("author", []) if a.get("fullName")],
+    }
 
 
 META_IMG_RE = re.compile(
     r"<meta[^>]+(?:property|name)=[\"'](?:og:image|twitter:image|citation_image)[\"'][^>]*>", re.I
 )
 CONTENT_ATTR_RE = re.compile(r"content=[\"']([^\"']+)[\"']", re.I)
-GENERIC_IMG_RE = re.compile(r"(logo|icon|favicon|default|placeholder|social|share|brand|cover-image)", re.I)
+GENERIC_IMG_RE = re.compile(r"(logo|icon|favicon|default|placeholder|social|share|brand|cover)", re.I)
 
 
 def biorxiv_figure_candidates(rec: dict, page_url: str) -> list[str]:
@@ -449,79 +539,124 @@ def biorxiv_figure_candidates(rec: dict, page_url: str) -> list[str]:
         server = rec.get("server", "biorxiv")
         for fig in ("F1", "F2"):
             cands.append(f"{base}/content/{server}/early/{dpath}/{ident}/{fig}.large.jpg")
-        # The JATS source can reveal the actual first figure id (e.g. a graphical abstract)
-        r = http_get(jats, browser=True)
-        if r is not None and "<fig" in r.text:
-            figs = re.findall(r"<fig[^>]*\sid=[\"']([^\"']+)[\"']", r.text)
-            for fid in figs[:2]:
-                fid_clean = fid.upper() if re.match(r"^f\d+$", fid, re.I) else None
-                if fid_clean:
-                    url = f"{base}/content/{server}/early/{dpath}/{ident}/{fid_clean}.large.jpg"
-                    if url not in cands:
-                        cands.insert(0, url)
-    # Article page (may be behind a bot challenge; best effort)
-    for suffix in (".full", ""):
-        r = http_get(page_url.rstrip("/") + suffix, browser=True, retries=1)
-        if r is None:
-            continue
-        found = re.findall(r"(https?://[^\"'\s]+/F1\.large\.jpg)", r.text)
-        cands = found[:1] + cands
-        break
+    page = fetch_page(page_url.rstrip("/") + ".full")
+    if page:
+        cands = re.findall(r"(https?://[^\"'\s]+/F1\.large\.jpg)", page)[:1] + cands
     return cands
 
 
-def page_figure_candidates(url: str) -> list[str]:
-    """og:image / twitter:image / citation_image from a landing page, excluding logos."""
-    r = http_get(url, browser=True, retries=1)
+def europepmc_figure_candidates(pmcid: str | None) -> list[str]:
+    """Figure 1 of an open-access article from its Europe PMC full text."""
+    if not pmcid:
+        return []
+    r = http_get(f"https://www.ebi.ac.uk/europepmc/webservices/rest/{pmcid}/fullTextXML",
+                 accept="application/xml", retries=2)
     if r is None:
         return []
     out = []
-    for tag in META_IMG_RE.findall(r.text[:200_000]):
+    for fig in re.findall(r"<fig\b.*?</fig>", r.text, flags=re.S)[:2]:
+        m = re.search(r"<graphic[^>]+xlink:href=[\"']([^\"']+)[\"']", fig)
+        if m:
+            href = re.sub(r"\.(tif|tiff|gif|jpg|png)$", "", m.group(1), flags=re.I)
+            out.append(f"https://europepmc.org/articles/{pmcid}/bin/{href}.jpg")
+    return out
+
+
+def publisher_figure_candidates(doi: str | None, pii: str | None) -> list[str]:
+    """Known, stable figure URL patterns of some publishers."""
+    out = []
+    if pii:  # Elsevier (ScienceDirect, Cell Press): graphical abstract, then figure 1
+        pii = re.sub(r"[^0-9A-Za-z]", "", pii).upper()
+        for name in ("ga1_lrg", "gr1_lrg", "ga1", "gr1"):
+            out.append(f"https://ars.els-cdn.com/content/image/1-s2.0-{pii}-{name}.jpg")
+    if doi and doi.lower().startswith("10.1038/"):  # Nature portfolio: figure 1
+        art = doi.split("/", 1)[1]
+        m = NATURE_ID_RE.match(art)
+        if m:
+            jid, yy, num = m.group(1), m.group(2), int(m.group(3))
+            path = f"springer-static/image/art%3A10.1038%2F{art}/MediaObjects/{jid}_20{yy[-2:]}_{num}_Fig1_HTML.png"
+            out += [f"https://media.springernature.com/full/{path}", f"https://media.springernature.com/lw685/{path}"]
+    return out
+
+
+def page_figure_candidates(url: str | None) -> list[str]:
+    """og:image / twitter:image / citation_image from a landing page, excluding logos and covers."""
+    page = fetch_page(url) if url else None
+    if not page:
+        return []
+    out = []
+    for tag in META_IMG_RE.findall(page):
         m = CONTENT_ATTR_RE.search(tag)
         if m:
-            img = urljoin(r.url, html.unescape(m.group(1)))
+            img = urljoin(url, html.unescape(m.group(1)))
             if not GENERIC_IMG_RE.search(urlparse(img).path):
                 out.append(img)
     return out
+
+
+def page_abstract(url: str | None) -> str | None:
+    page = fetch_page(url) if url else None
+    text = page_meta(page, "citation_abstract", "dc.description", "DC.description", "description", "og:description")
+    if text and len(text) > 200:
+        return clean_abstract(text)
+    return None
 
 
 def build_publication(item: dict) -> dict | None:
     url = item["url"]
     ids = parse_publication_url(item.get("doi") or url)
     doi = item.get("doi") or ids["doi"]
+    if not doi and not item.get("title"):
+        error(f"Publication {url}: could not find a DOI for this URL. Use a https://doi.org/<DOI> link, "
+              "or add 'doi:' (or 'title', 'date' and 'abstract') to the entry.")
+        return None
+
     rec: dict = {}
     if doi and (ids["server"] or doi.startswith(BIORXIV_DOI_PREFIXES)):
         rec = fetch_biorxiv(doi, ids["server"], ids["version"]) or {}
-    if doi and (not rec.get("title") or not rec.get("abstract") or not rec.get("authors")):
-        cr = fetch_crossref(doi) or {}
-        for k, v in cr.items():
+    if doi and not (rec.get("title") and rec.get("abstract") and rec.get("authors")):
+        for k, v in (fetch_crossref(doi) or {}).items():
             if v and not rec.get(k):
                 rec[k] = v
-    if doi and not rec.get("abstract"):
-        rec["abstract"] = fetch_europepmc_abstract(doi) or ""
+    epmc = {}
+    if doi and not rec.get("server"):  # journal article: Europe PMC has abstracts + open-access figures
+        epmc = fetch_europepmc(doi)
+        for k in ("title", "authors", "date", "venue", "abstract"):
+            if epmc.get(k) and not rec.get(k):
+                rec[k] = epmc[k]
+    if not rec.get("abstract"):
+        rec["abstract"] = page_abstract(url) or page_abstract(rec.get("landing_url")) or ""
     if not rec.get("title") and not item.get("title"):
-        error(f"Publication {url}: could not retrieve metadata (no DOI found or APIs unreachable). "
+        error(f"Publication {url}: no metadata found for DOI {doi}. "
               "Add 'title', 'date' and 'abstract' to the entry to override.")
         return None
+    if not rec.get("abstract") and not item.get("abstract"):
+        warn(f"Publication {url}: no abstract found. Add 'abstract:' to the entry to set one.")
 
     slug = slugify(doi or url)
-    image = None
-    image_source = None
+    image = image_source = None
     if not item.get("image"):
-        cands: list[str] = []
-        if rec.get("jatsxml") or (ids["server"]):
-            cands += biorxiv_figure_candidates(rec, url)
+        if rec.get("server"):
+            cands = biorxiv_figure_candidates(rec, url)
         else:
+            cands = publisher_figure_candidates(doi, ids.get("pii") or rec.get("pii"))
+            cands += europepmc_figure_candidates(epmc.get("pmcid"))
             cands += page_figure_candidates(url)
-            if doi and rec.get("landing_url") and rec["landing_url"] != url:
+            if rec.get("landing_url") and rec["landing_url"] != url:
                 cands += page_figure_candidates(rec["landing_url"])
-        image, image_source = try_images(cands, "publications", slug, browser=True)
+        image, image_source = try_images(cands, "publications", slug, browser=True, referer=url)
         if not image:
             warn(f"Publication {url}: no figure could be downloaded automatically. "
                  "Add 'image: <url or public/... path>' to the entry to set one.")
 
     authors = rec.get("authors") or []
-    pub = {
+    caption = None
+    if image_source:
+        if re.search(r"(/F1\.large\.jpg|_Fig1_HTML|-gr1(_lrg)?\.jpg)$", image_source):
+            caption = "Figure 1"
+        elif re.search(r"-ga1(_lrg)?\.jpg$", image_source):
+            caption = "Graphical abstract"
+    return {
         "id": slug,
         "url": url,
         "doi": doi,
@@ -538,9 +673,8 @@ def build_publication(item: dict) -> dict | None:
         "published_doi": rec.get("published_doi"),
         "image": image,
         "image_source": image_source,
-        "image_caption": "Figure 1" if image_source and re.search(r"/F1\.large\.jpg$", image_source) else None,
+        "image_caption": caption,
     }
-    return pub
 
 
 # --------------------------------------------------------------------------
@@ -850,6 +984,21 @@ def build_website_entry(item: dict, kind: str) -> dict | None:
 # --------------------------------------------------------------------------
 # Overrides, cache and main loop
 # --------------------------------------------------------------------------
+def format_license(lic) -> str | None:
+    """'cc_by_nc' / 'http://creativecommons.org/licenses/by-nc/4.0/' -> 'CC BY-NC (4.0)'."""
+    if not lic or not isinstance(lic, str):
+        return None
+    m = re.search(r"creativecommons\.org/licenses/([a-z\-]+)/(\d\.\d)", lic, re.I)
+    if m:
+        return f"CC {m.group(1).upper()} {m.group(2)}"
+    m = re.match(r"^cc[_\-]?(by(?:[_\-](?:nc|nd|sa))*)$", lic, re.I)
+    if m:
+        return "CC " + m.group(1).replace("_", "-").upper()
+    if lic.lower() in ("cc0", "cc_no", "cc0-1.0"):
+        return "CC0"
+    return lic if not lic.startswith("http") else None
+
+
 def apply_overrides(entry: dict, item: dict, kind: str) -> dict:
     for key, value in item.items():
         if key == "url" or value is None:
@@ -876,6 +1025,7 @@ def apply_overrides(entry: dict, item: dict, kind: str) -> dict:
             entry[key] = value
     if entry.get("date"):
         entry["year"] = entry["date"][:4]
+    entry["license"] = format_license(entry.get("license"))
     if kind == "publications":
         paras = [p.strip() for p in re.split(r"\n\s*\n", entry.get("abstract") or "") if p.strip()]
         entry["abstract_html"] = "".join(f"<p>{html.escape(p, quote=False)}</p>" for p in paras)
@@ -953,6 +1103,9 @@ def process(kind: str, refresh: bool, only: str | None) -> None:
                 warn(f"{item['url']}: keeping previously generated data")
                 entries.append(cached)
             continue
+        if any(e.get("id") == entry.get("id") for e in entries):
+            warn(f"{item['url']}: same {'DOI' if kind == 'publications' else 'repository'} as another entry (ignored)")
+            continue
         entry = apply_overrides(entry, item, kind)
         entry["source_url"] = item["url"]
         entry["source_hash"] = h
@@ -987,6 +1140,18 @@ def main() -> int:
     kinds = KINDS if args.kind == "all" else (args.kind,)
     for kind in kinds:
         process(kind, args.refresh, args.only)
+
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as fh:
+            if FAILURES or WARNINGS:
+                fh.write("### Entries that need attention\n\n")
+                for f in FAILURES:
+                    fh.write(f"- :x: {f}\n")
+                for w in WARNINGS:
+                    fh.write(f"- :warning: {w}\n")
+            else:
+                fh.write("All entries were generated without problems. :white_check_mark:\n")
 
     if FAILURES:
         info(f"\n{len(FAILURES)} problem(s):")
