@@ -36,40 +36,6 @@
       "links": []
     },
     {
-      "id": "sebastian-ayala-ruano",
-      "status": "active",
-      "name": "Sebastian",
-      "surname": "Ayala Ruano",
-      "full_name": "Sebastian Ayala Ruano",
-      "positions": [
-        "Research Assistant"
-      ],
-      "team": "Multi-omics Network Analytics (MoNA)",
-      "years": "",
-      "now": "",
-      "photo": "public/auto/people/sebastian-ayala-ruano.jpg",
-      "initials": "SR",
-      "email": "asaru@dtu.dk",
-      "links": []
-    },
-    {
-      "id": "txell-amigo",
-      "status": "active",
-      "name": "Txell",
-      "surname": "Amigo",
-      "full_name": "Txell Amigo",
-      "positions": [
-        "Research Assistant"
-      ],
-      "team": "Multi-omics Network Analytics (MoNA)",
-      "years": "",
-      "now": "",
-      "photo": "public/auto/people/txell-amigo.jpg",
-      "initials": "TA",
-      "email": "txeami@dtu.dk",
-      "links": []
-    },
-    {
       "id": "marco-reverenna",
       "status": "active",
       "name": "Marco",
@@ -153,92 +119,127 @@
       "initials": "EC",
       "email": "s243564@dtu.dk",
       "links": []
+    }
+  ],
+  "alumni": [
+    {
+      "id": "sebastian-ayala-ruano",
+      "status": "alumni",
+      "name": "Sebastian",
+      "surname": "Ayala Ruano",
+      "full_name": "Sebastian Ayala Ruano",
+      "positions": [
+        "Research Assistant"
+      ],
+      "team": "IRB Barcelona -- Mechanisms of Disease Unit",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/sebastian-ayala-ruano.jpg",
+      "initials": "SR",
+      "email": "",
+      "links": []
+    },
+    {
+      "id": "txell-amigo",
+      "status": "alumni",
+      "name": "Txell",
+      "surname": "Amigo",
+      "full_name": "Txell Amigo",
+      "positions": [
+        "Research Assistant"
+      ],
+      "team": "BRIGHT Informatics platform",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/txell-amigo.jpg",
+      "initials": "TA",
+      "email": "",
+      "links": []
     },
     {
       "id": "albert-palleja-caro",
-      "status": "active",
+      "status": "alumni",
       "name": "Albert",
       "surname": "Pallejà Caro",
       "full_name": "Albert Pallejà Caro",
       "positions": [
         "Team Lead Data Science Platform"
       ],
-      "team": "Data Science Platform",
+      "team": "BRIGHT Informatics platform",
       "years": "",
       "now": "",
       "photo": "public/auto/people/albert-palleja-caro.jpg",
       "initials": "AC",
-      "email": "apca@dtu.dk",
-      "links": []
-    },
-    {
-      "id": "jakob-b-jespersen",
-      "status": "active",
-      "name": "Jakob B.",
-      "surname": "Jespersen",
-      "full_name": "Jakob B. Jespersen",
-      "positions": [
-        "Data Scientist"
-      ],
-      "team": "Data Science Platform",
-      "years": "",
-      "now": "",
-      "photo": "public/auto/people/jakob-b-jespersen.jpg",
-      "initials": "JJ",
-      "email": "jbeje@dtu.dk",
+      "email": "",
       "links": []
     },
     {
       "id": "henry-webel",
-      "status": "active",
+      "status": "alumni",
       "name": "Henry",
       "surname": "Webel",
       "full_name": "Henry Webel",
       "positions": [
         "Senior Data Scientist"
       ],
-      "team": "Data Science Platform",
+      "team": "BRIGHT Informatics platform",
       "years": "",
       "now": "",
       "photo": "public/auto/people/henry-webel.jpg",
       "initials": "HW",
-      "email": "heweb@dtu.dk",
+      "email": "",
       "links": []
     },
     {
       "id": "juliana-assis",
-      "status": "active",
+      "status": "alumni",
       "name": "Juliana",
       "surname": "Assis",
       "full_name": "Juliana Assis",
       "positions": [
         "Senior Data Scientist"
       ],
-      "team": "Data Science Platform",
+      "team": "BRIGHT Informatics platform",
       "years": "",
       "now": "",
       "photo": "public/auto/people/juliana-assis.jpg",
       "initials": "JA",
-      "email": "jasge@dtu.dk",
+      "email": "",
       "links": []
     },
     {
       "id": "sebastian-schulz",
-      "status": "active",
+      "status": "alumni",
       "name": "Sebastian",
       "surname": "Schulz",
       "full_name": "Sebastian Schulz",
       "positions": [
         "Senior Data Scientist"
       ],
-      "team": "Data Science Platform",
+      "team": "BRIGHT Informatics platform",
       "years": "",
       "now": "",
       "photo": "public/auto/people/sebastian-schulz.jpg",
       "initials": "SS",
-      "email": "sebschu@dtu.dk",
+      "email": "",
+      "links": []
+    },
+    {
+      "id": "jakob-b-jespersen",
+      "status": "alumni",
+      "name": "Jakob B.",
+      "surname": "Jespersen",
+      "full_name": "Jakob B. Jespersen",
+      "positions": [
+        "Data Scientist"
+      ],
+      "team": "BRIGHT Informatics platform",
+      "years": "",
+      "now": "",
+      "photo": "public/auto/people/jakob-b-jespersen.jpg",
+      "initials": "JJ",
+      "email": "",
       "links": []
     }
-  ],
-  "alumni": []
+  ]
 }
