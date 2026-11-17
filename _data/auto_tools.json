@@ -4,9 +4,9 @@
     "url": "https://github.com/Multiomics-Analytics-Group/ale-cooccurrence-mutual-exclusivity-nf",
     "repo": "Multiomics-Analytics-Group/ale-cooccurrence-mutual-exclusivity-nf",
     "title": "ALEdb mutation QC and gene co-occurrence analysis",
-    "description": "A nextflow pipeline for co-occurrence and mutual exclusivity analysis for ALE mutational data",
-    "summary_html": "<p>The QC steps run in order. Each one writes its table and the rows it removed, with the reason.</p><p>A report step then counts rows, experiments, samples and genes before and after each step.</p>",
-    "summary": "The QC steps run in order. Each one writes its table and the rows it removed, with the reason. A report step then counts rows, experiments, samples and genes before and after each step.",
+    "description": "Mutation QC and gene co-occurrence / mutual-exclusivity analysis of adaptive laboratory evolution data",
+    "summary_html": "<p>A Nextflow pipeline that cleans adaptive laboratory evolution (ALE) mutation calls from <a href=\"https://aledb.org\">ALEdb</a> into one table of endpoint mutations, removing starting-strain and hypermutator mutations, applying frequency thresholds and harmonising gene names with STRING aliases. It then builds a gene-by-endpoint matrix for each experiment and tests every gene pair for <b>co-occurrence</b> and <b>mutual exclusivity</b> with both DISCOVER and Fisher's exact test, highlighting candidate genetic interactions. Runs for <i>E. coli</i> and <i>P. putida</i> are included.</p>",
+    "summary": "A Nextflow pipeline that cleans adaptive laboratory evolution (ALE) mutation calls from [ALEdb](https://aledb.org) into one table of endpoint mutations, removing starting-strain and hypermutator mutations, applying frequency thresholds and harmonising gene names with STRING aliases. It then builds a gene-by-endpoint matrix for each experiment and tests every gene pair for **co-occurrence** and **mutual exclusivity** with both DISCOVER and Fisher's exact test, highlighting candidate genetic interactions. Runs for *E. coli* and *P. putida* are included.",
     "highlights": [],
     "keywords": [],
     "homepage": null,
@@ -17,9 +17,12 @@
     "stars": 0,
     "image": "public/auto/tools/multiomics-analytics-group-ale-cooccurrence-mutual-exclusivi.jpg",
     "image_source": "https://opengraph.githubassets.com/1/Multiomics-Analytics-Group/ale-cooccurrence-mutual-exclusivity-nf",
+    "themes": [
+      "microbes"
+    ],
     "year": "2026",
     "source_url": "https://github.com/Multiomics-Analytics-Group/ale-cooccurrence-mutual-exclusivity-nf",
-    "source_hash": "7607cc86184b",
+    "source_hash": "192e3da83a16",
     "featured": false
   },
   {
@@ -48,9 +51,13 @@
     "stars": 1,
     "image": "https://raw.githubusercontent.com/EBI-Metagenomics/mgnipy/main/docs/assets/mgnipy_figure.gif",
     "image_source": "https://raw.githubusercontent.com/EBI-Metagenomics/mgnipy/main/docs/assets/mgnipy_figure.gif",
+    "themes": [
+      "data",
+      "microbes"
+    ],
     "year": "2026",
     "source_url": "https://github.com/EBI-Metagenomics/mgnipy",
-    "source_hash": "855d99ba328d",
+    "source_hash": "6b93943af88d",
     "featured": false
   },
   {
@@ -71,9 +78,13 @@
     "stars": 6,
     "image": "public/auto/tools/multiomics-analytics-group-prefer-ontology.jpg",
     "image_source": "https://opengraph.githubassets.com/1/Multiomics-Analytics-Group/prefer_ontology",
+    "themes": [
+      "knowledge-graphs",
+      "data"
+    ],
     "year": "2025",
     "source_url": "https://github.com/Multiomics-Analytics-Group/prefer_ontology",
-    "source_hash": "8c8e0cde5e18",
+    "source_hash": "95b7aebf23c5",
     "featured": false
   },
   {
@@ -101,9 +112,12 @@
     "stars": 1,
     "image": "public/auto/tools/multiomics-analytics-group-instanexus.png",
     "image_source": "https://raw.githubusercontent.com/Multiomics-Analytics-Group/InstaNexus/main/docs/source/assets/instanexus_panel.png",
+    "themes": [
+      "generative"
+    ],
     "year": "2025",
     "source_url": "https://github.com/Multiomics-Analytics-Group/InstaNexus",
-    "source_hash": "30e1f6f5fb45",
+    "source_hash": "6221f379c754",
     "featured": false
   },
   {
@@ -124,11 +138,14 @@
     "stars": 0,
     "image": "public/auto/tools/multiomics-analytics-group-orthohpi2-0.jpg",
     "image_source": "https://raw.githubusercontent.com/Multiomics-Analytics-Group/OrthoHPI2.0/main/images/homepage.png",
+    "themes": [
+      "microbes"
+    ],
     "embed": "public/Gi_network.html",
     "embed_title": "Giardia intestinalis predicted PPI",
     "year": "2022",
     "source_url": "https://github.com/Multiomics-Analytics-Group/OrthoHPI2.0",
-    "source_hash": "dd91f7672190",
+    "source_hash": "7ab75d0f617f",
     "featured": false
   }
 ]

@@ -29,20 +29,27 @@
     "stars": 1,
     "image": "public/auto/courses/multiomics-analytics-group-course-multi-omics-analysis.jpg",
     "image_source": "https://opengraph.githubassets.com/1/Multiomics-Analytics-Group/course_multi-omics_analysis",
+    "themes": [
+      "training"
+    ],
     "year": "2026",
     "source_url": "https://github.com/Multiomics-Analytics-Group/course_multi-omics_analysis",
-    "source_hash": "9e78759b3780",
+    "source_hash": "05f3a85c714e",
     "featured": false
   },
   {
     "id": "multiomics-analytics-group-course-graph-machine-learning",
     "url": "https://github.com/Multiomics-Analytics-Group/course_graph_machine_learning",
     "repo": "Multiomics-Analytics-Group/course_graph_machine_learning",
-    "title": "Course 27666 AI-guided Protein Science",
+    "title": "Graph Machine Learning (DTU 27666 AI-guided Protein Science)",
     "description": "This is part of an AI course",
-    "summary_html": "<p>This is part of an AI course</p>",
-    "summary": "This is part of an AI course",
-    "highlights": [],
+    "summary_html": "<p>The graph machine learning module of the DTU course 27666 <i>AI-guided Protein Science</i>. It introduces graph biology and how to turn biological data into graphs, graph machine learning tasks and shallow embeddings (Node2Vec, DeepWalk) with PyTorch Geometric, and graph neural networks for node- and graph-level prediction. Every session comes with a hands-on Google Colab notebook.</p>",
+    "summary": "The graph machine learning module of the DTU course 27666 *AI-guided Protein Science*. It introduces graph biology and how to turn biological data into graphs, graph machine learning tasks and shallow embeddings (Node2Vec, DeepWalk) with PyTorch Geometric, and graph neural networks for node- and graph-level prediction. Every session comes with a hands-on Google Colab notebook.",
+    "highlights": [
+      "Represent biological data as graphs",
+      "Learn node embeddings with Node2Vec and DeepWalk in PyTorch Geometric",
+      "Build graph neural networks for node and graph prediction tasks"
+    ],
     "keywords": [],
     "homepage": null,
     "date": "2025-01-10",
@@ -52,9 +59,13 @@
     "stars": 3,
     "image": "public/auto/courses/multiomics-analytics-group-course-graph-machine-learning.jpg",
     "image_source": "https://opengraph.githubassets.com/1/Multiomics-Analytics-Group/course_graph_machine_learning",
+    "themes": [
+      "training",
+      "graph-ml"
+    ],
     "year": "2025",
     "source_url": "https://github.com/Multiomics-Analytics-Group/course_graph_machine_learning",
-    "source_hash": "01d777e2a65a",
+    "source_hash": "444851951215",
     "featured": false
   },
   {
@@ -63,8 +74,8 @@
     "repo": "Multiomics-Analytics-Group/course_protein_language_modeling",
     "title": "Protein Language Models",
     "description": "",
-    "summary_html": "<p>To stop run: <code>docker compose stop</code> To stop and remove containers: <code>docker compose down</code></p>",
-    "summary": "To stop run: docker compose stop To stop and remove containers: docker compose down",
+    "summary_html": "<p>An up-to-date course at the intersection of language models and the complex world of proteins. It provides an overview of the current state of the art of protein language models, which are changing research, discovery and innovation in molecular biology.</p>",
+    "summary": "An up-to-date course at the intersection of language models and the complex world of proteins. It provides an overview of the current state of the art of protein language models, which are changing research, discovery and innovation in molecular biology.",
     "highlights": [
       "Gain a comprehensive understanding of the synergy between language models and protein data",
       "Equip students with the skills to leverage pre-trained models and fine-tuning for bioinformatics applications",
@@ -86,9 +97,13 @@
     "stars": 52,
     "image": "public/auto/courses/multiomics-analytics-group-course-protein-language-modeling.png",
     "image_source": "https://raw.githubusercontent.com/Multiomics-Analytics-Group/course_protein_language_modeling/main/img/nb_logo.png",
+    "themes": [
+      "training",
+      "generative"
+    ],
     "year": "2023",
     "source_url": "https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling",
-    "source_hash": "a12313f346e4",
+    "source_hash": "aa43a188e56f",
     "featured": false
   },
   {
@@ -122,10 +137,14 @@
     "stars": 1,
     "image": "public/auto/courses/multiomics-analytics-group-networks-to-study-microbes.png",
     "image_source": "https://raw.githubusercontent.com/Multiomics-Analytics-Group/networks_to_study_microbes/main/figures/netmicrobes.png",
+    "themes": [
+      "training",
+      "microbes"
+    ],
     "note": "Some of the course content is in Spanish, but we are working on an English version.",
     "year": "2023",
     "source_url": "https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes",
-    "source_hash": "f704f922d3b9",
+    "source_hash": "eb274502db2d",
     "featured": false
   }
 ]
