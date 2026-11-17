@@ -30,7 +30,7 @@ Included are instructions for how to update the team website with a focus on the
 
 ```bash
 /
-├── index.md
+├── index.html
 ├── 1research.md
 ├── 3people.md
 ├── 4tools.md
@@ -89,7 +89,7 @@ Included are instructions for how to update the team website with a focus on the
   ---
   ```
 - `layout: page` is to be used for almost all of the pages you want included in the site
-- `layout: default` is only used for the home page [index.md](index.md) because it has some additional formatting + appears as the first option in the top menu bar
+- `layout: default` is only used for the home page [index.html](index.html) because it has some additional formatting + appears as the first option in the top menu bar
   >From the Hyde repo: "**Why require a specific layout?** Jekyll will return *all* pages, including the `atom.xml`, and with an alphabetical sort order. To ensure the first link is *Home*, we exclude the `index.md` page from this list by specifying the `default` layout."
 
 

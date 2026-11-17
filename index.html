@@ -1,0 +1,220 @@
+---
+layout: default
+title: Home
+---
+
+{%- assign base = site.baseurl -%}
+{%- assign pubs = site.data.auto_publications -%}
+{%- assign tools = site.data.auto_tools -%}
+{%- assign courses = site.data.auto_courses -%}
+
+<div class="home">
+
+<section class="home-hero">
+  <p class="home-kicker">Multi-omics Network Analytics &middot; Technical University of Denmark</p>
+  <h1 class="home-title">Learning the structure of biology</h1>
+  <p class="home-lead">
+    We build AI that learns from biological networks. By combining multi-omics data,
+    knowledge graphs and graph representation learning, we turn heterogeneous
+    measurements into predictive and interpretable models of microbial communities,
+    host&ndash;microbe interactions and human disease.
+  </p>
+  <p class="home-cta">
+    <a class="home-btn home-btn-primary" href="{{ base }}/research/">Publications</a>
+    <a class="home-btn" href="{{ base }}/tools/">Tools</a>
+    <a class="home-btn" href="{{ base }}/education/">Courses</a>
+    <a class="home-btn" href="{{ base }}/people/">Team</a>
+  </p>
+</section>
+
+<section class="home-name">
+  <div class="home-letter">
+    <span class="home-initial">M</span>
+    <h3>Multi-omics</h3>
+    <p>Proteomics, metabolomics and meta-omics brought together into one view of the biological system.</p>
+  </div>
+  <div class="home-letter">
+    <span class="home-initial">N</span>
+    <h3>Network</h3>
+    <p>Graphs and knowledge graphs as a shared language for data, prior knowledge and models.</p>
+  </div>
+  <div class="home-letter">
+    <span class="home-initial">A</span>
+    <h3>Analytics</h3>
+    <p>Graph machine learning, representation learning and generative models that are both predictive and explainable.</p>
+  </div>
+</section>
+
+<section class="home-section">
+  <h2>Our vision</h2>
+  <p>
+    Biology is relational: function emerges from interactions between molecules, cells,
+    organisms and their environment. Yet most computational models still treat
+    measurements as independent features. We believe the next generation of biomedical
+    AI will learn directly from this relational structure, representing proteins,
+    microbes, patients and prior knowledge in a shared space where every prediction
+    can be traced back to a mechanism.
+  </p>
+  <p>
+    Our goal is AI that is <b>multimodal by construction</b>, <b>interpretable by design</b>
+    and <b>grounded in FAIR, machine-actionable data</b>, so that discoveries can move
+    from the computer to the clinic and the biofoundry.
+  </p>
+</section>
+
+<section class="home-section">
+  <h2>Research themes</h2>
+  <div class="home-grid">
+
+    <div class="home-card">
+      <h3>Graph representation learning &amp; explainable AI</h3>
+      <p>
+        We train graph neural networks on individual-specific microbial association
+        networks and interpret what drives their predictions. In inflammatory bowel
+        disease, this revealed a densely connected module of co-abundant
+        <i>Bacteroidales</i> whose associations, rather than abundance shifts, carry
+        the predictive signal.
+      </p>
+      <p class="home-refs"><a href="{{ base }}/research/#pub-10-64898-2026-10-27-762128">IBD graph neural networks</a></p>
+    </div>
+
+    <div class="home-card">
+      <h3>Knowledge graphs &amp; semantic data</h3>
+      <p>
+        From the Clinical Knowledge Graph, with close to 20 million nodes and 220 million
+        relationships linking clinical proteomics to biomedical knowledge, to the PREFER
+        ontology for precision fermentation, we build the structured knowledge that
+        AI needs to reason over biology.
+      </p>
+      <p class="home-refs">
+        <a href="{{ base }}/research/#pub-10-1038-s41587-021-01145-6">Clinical Knowledge Graph</a> &middot;
+        <a href="{{ base }}/research/#pub-10-1038-s41597-026-08099-x">PREFER</a> &middot;
+        <a href="{{ base }}/research/#pub-10-1016-j-biotechadv-2026-108864">Graph data science in fungal biotechnology</a>
+      </p>
+    </div>
+
+    <div class="home-card">
+      <h3>Generative &amp; deep learning models for omics</h3>
+      <p>
+        ABaCo combines a variational autoencoder with an adversarial discriminator to
+        integrate metagenomic studies, correcting technical heterogeneity while
+        preserving biological signal. InstaNexus couples AI-driven <i>de novo</i> peptide
+        sequencing with assembly to reconstruct full-length antibodies and nanobodies
+        directly from mass spectrometry data.
+      </p>
+      <p class="home-refs">
+        <a href="{{ base }}/research/#pub-10-1093-nar-gkag227">ABaCo</a> &middot;
+        <a href="{{ base }}/research/#pub-10-1016-j-mcpro-2026-101547">InstaNexus</a>
+      </p>
+    </div>
+
+    <div class="home-card">
+      <h3>Microbiomes, pathogens &amp; host interactions</h3>
+      <p>
+        We study how microbes adapt and interact with their hosts: comparative genomics
+        of 66 clinically relevant skin fungi, host&ndash;parasite protein interaction
+        predictions across 46 parasites and four hosts, and statistical frameworks to
+        find candidate genetic interactions in adaptive laboratory evolution.
+      </p>
+      <p class="home-refs">
+        <a href="{{ base }}/research/#pub-10-1038-s41467-026-74431-z">Skin fungi genomics</a> &middot;
+        <a href="{{ base }}/tools/#tool-multiomics-analytics-group-orthohpi2-0">OrthoHPI 2.0</a> &middot;
+        <a href="{{ base }}/research/#pub-10-64898-2026-11-12-766281">ALE genetic interactions</a>
+      </p>
+    </div>
+
+    <div class="home-card">
+      <h3>AI-ready data &amp; autonomous laboratories</h3>
+      <p>
+        Models are only as good as their data. We argue for data-centric AI, built on
+        curated repositories, consistent metadata and semantic standards, as the
+        foundation for autonomous virtual laboratories, and we build the tooling that
+        makes it practical.
+      </p>
+      <p class="home-refs">
+        <a href="{{ base }}/research/#pub-10-1016-j-copbio-2025-103434">Beyond the model</a> &middot;
+        <a href="{{ base }}/tools/#tool-ebi-metagenomics-mgnipy">MGni.py</a> &middot;
+        <a href="{{ base }}/research/#pub-10-1101-2025-03-05-641152">VueGen</a>
+      </p>
+    </div>
+
+    <div class="home-card">
+      <h3>Open science &amp; training</h3>
+      <p>
+        Our software, data and course materials are open. We teach multi-omics data
+        analysis, protein language models, AI-guided protein science and network
+        approaches to microbiology, so that these methods reach the people who
+        generate the data.
+      </p>
+      <p class="home-refs"><a href="{{ base }}/education/">Courses</a> &middot; <a href="https://github.com/Multiomics-Analytics-Group">GitHub</a></p>
+    </div>
+
+  </div>
+</section>
+
+<section class="home-section home-future">
+  <h2>Where we are heading</h2>
+  <ul>
+    <li><b>Multimodal foundation models for biology.</b> Joint representations of sequence, structure, abundance, interaction networks and clinical context that transfer across cohorts, species and tasks.</li>
+    <li><b>Explainable graph AI as a discovery engine.</b> From accurate predictions to testable hypotheses about interacting modules, pathways and mechanisms.</li>
+    <li><b>Knowledge graphs meet large language models.</b> Grounding generative AI in curated biomedical knowledge for retrieval, reasoning and literature-scale curation.</li>
+    <li><b>Agentic, data-centric science.</b> AI agents working on FAIR, machine-actionable data to close the design&ndash;build&ndash;test&ndash;learn loop in biofoundries and translational research.</li>
+    <li><b>Clinical translation.</b> Microbiome and proteomics models that stratify patients and point towards interventions.</li>
+  </ul>
+</section>
+
+{%- if pubs and pubs.size > 0 %}
+<section class="home-section">
+  <h2>Latest publications</h2>
+  <ul class="home-pubs">
+  {%- for pub in pubs limit:4 %}
+    <li>
+      <a href="{{ base }}/research/#pub-{{ pub.id }}">{{ pub.title | escape }}</a>
+      <span class="home-pub-meta">{% if pub.venue %}{{ pub.venue | escape }}{% endif %}{% if pub.year %}, {{ pub.year }}{% endif %}</span>
+    </li>
+  {%- endfor %}
+  </ul>
+  <p><a href="{{ base }}/research/">All publications &rarr;</a></p>
+</section>
+{%- endif %}
+
+{%- if tools and tools.size > 0 %}
+<section class="home-section">
+  <h2>Tools</h2>
+  <div class="home-tiles">
+  {%- for tool in tools limit:4 %}
+    <a class="home-tile" href="{{ base }}/tools/#tool-{{ tool.id }}">
+      {%- if tool.image %}{% if tool.image contains '://' %}{% assign img = tool.image %}{% else %}{% assign img = base | append: '/' | append: tool.image %}{% endif %}
+      <img src="{{ img }}" alt="" loading="lazy">
+      {%- endif %}
+      <span class="home-tile-title">{{ tool.title | escape }}</span>
+      {%- if tool.description != "" %}<span class="home-tile-text">{{ tool.description | escape | truncate: 110 }}</span>{% endif %}
+    </a>
+  {%- endfor %}
+  </div>
+  <p><a href="{{ base }}/tools/">All tools &rarr;</a></p>
+</section>
+{%- endif %}
+
+{%- if courses and courses.size > 0 %}
+<section class="home-section">
+  <h2>Courses</h2>
+  <ul class="home-pubs">
+  {%- for course in courses limit:4 %}
+    <li><a href="{{ base }}/education/#course-{{ course.id }}">{{ course.title | escape }}</a></li>
+  {%- endfor %}
+  </ul>
+  <p><a href="{{ base }}/education/">All courses &rarr;</a></p>
+</section>
+{%- endif %}
+
+<section class="home-join">
+  <h2>Work with us</h2>
+  <p>
+    We are a multidisciplinary, international team of computer scientists, bioinformaticians
+    and life scientists. If you are interested in a PhD, postdoc, student project or
+    collaboration in AI for multi-omics, <a href="{{ base }}/contact/">get in touch</a>.
+  </p>
+</section>
+
+</div>
