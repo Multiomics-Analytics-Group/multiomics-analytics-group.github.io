@@ -18,6 +18,7 @@ Included are instructions for how to update the team website with a focus on the
     - [Adding a page (example)](#adding-a-page-example)
     - [Updating side nav links](#updating-side-nav-links)
   - [Publications, tools and courses (automated)](#publications-tools-and-courses-automated)
+  - [Home page](#home-page)
   - [People page (automated)](#people-page-automated)
   - [Updating the styling ](#updating-the-styling)
   - [Original Author](#original-author)
@@ -195,6 +196,23 @@ python scripts/update_site_content.py --refresh  # re-fetch everything
 The workflow can also be run by hand from the **Actions** tab (tick *refresh* to re-fetch everything), and it refreshes everything automatically on the 1st of each month. Because `master` only accepts changes through pull requests, these runs open a PR (`Update auto-generated site content`) that you merge to publish.
 
 :warning: Do not edit `_data/auto_*.json` or `public/auto/` by hand; they are overwritten by the workflow. Hand-written tools and courses already on the pages are kept below the generated ones.
+
+
+## Home page
+
+The home page (`index.html`) updates itself from the generated data:
+
+- **Latest publications, Tools and Courses** show the newest entries of `_content/*.yml` as soon as the workflow's generated data is merged.
+- **Research themes** are defined in [`_data/home_themes.yml`](_data/home_themes.yml) (title and text, edited by hand). Each publication, tool or course is linked under a theme when its entry lists the theme id, e.g.
+
+  ```yaml
+  - url: https://doi.org/10.xxxx/yyyy
+    short: My method        # optional short label for the home page
+    themes: [graph-ml, microbes]
+  ```
+
+  Theme ids: `graph-ml`, `knowledge-graphs`, `generative`, `microbes`, `data`, `training`.
+- The vision and "Where we are heading" texts are edited directly in `index.html`.
 
 
 ## People page (automated)
