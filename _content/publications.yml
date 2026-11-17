@@ -12,28 +12,50 @@
 # Optional fields override what is fetched automatically:
 #   doi, title, authors (list), date (YYYY-MM-DD), venue, abstract,
 #   image (URL or repo path such as public/assets/my_figure.png),
-#   image_caption, hidden (true = keep the entry but do not show it)
+#   image_caption, hidden (true = keep the entry but do not show it),
+#   short (short label used on the home page),
+#   themes (list of home-page themes, ids from _data/home_themes.yml)
 #
 # Example:
 # - url: https://doi.org/10.1093/bioinformatics/btaxxxx
 #   image: public/assets/graphical_abstract.png
 
 - url: https://www.biorxiv.org/content/10.64898/2026.11.12.766281v1
+  short: ALE genetic interactions
+  themes: [microbes]
 
 - url: https://www.biorxiv.org/content/10.64898/2026.10.27.762128v1
+  short: IBD graph neural networks
+  themes: [graph-ml, microbes]
 
 - url: https://doi.org/10.1101/2025.03.05.641152
+  short: VueGen
+  themes: [data]
 
 - url: https://www.nature.com/articles/s41587-021-01145-6
+  short: Clinical Knowledge Graph
+  themes: [knowledge-graphs]
 
 - url: https://www.nature.com/articles/s41597-026-08099-x
+  short: PREFER ontology
+  themes: [knowledge-graphs, data]
 
 - url: https://www.nature.com/articles/s41467-026-74431-z
+  short: Skin fungi genomics
+  themes: [microbes]
 
 - url: https://www.sciencedirect.com/science/article/pii/S0734975026000704?
+  short: Graph data science in fungal biotechnology
+  themes: [knowledge-graphs, graph-ml]
 
 - url: https://academic.oup.com/nar/article/54/5/gkag227/8526021
+  short: ABaCo
+  themes: [generative, microbes]
 
 - url: https://www.sciencedirect.com/science/article/pii/S1535947626000435
+  short: InstaNexus
+  themes: [generative]
 
 - url: https://www.sciencedirect.com/science/article/pii/S0958166925001788
+  short: Beyond the model
+  themes: [data]

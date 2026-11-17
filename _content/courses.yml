@@ -10,11 +10,18 @@
 # Optional fields override what is fetched automatically:
 #   title, summary (Markdown), highlights (list of objectives),
 #   image (URL or repo path), keywords (list), note,
-#   date (YYYY-MM-DD; default = repository creation date), hidden (true/false)
+#   date (YYYY-MM-DD; default = repository creation date), hidden (true/false),
+#   themes (list of home-page themes, ids from _data/home_themes.yml)
 
 - url: https://github.com/Multiomics-Analytics-Group/course_multi-omics_analysis
+  themes: [training]
 
 - url: https://github.com/Multiomics-Analytics-Group/course_protein_language_modeling
+  themes: [training, generative]
+  summary: >-
+    An up-to-date course at the intersection of language models and the complex world of proteins.
+    It provides an overview of the current state of the art of protein language models, which are
+    changing research, discovery and innovation in molecular biology.
   # kept from the previous hand-written entry (not in the README)
   title: Protein Language Models
   image: https://raw.githubusercontent.com/Multiomics-Analytics-Group/course_protein_language_modeling/main/img/nb_logo.png
@@ -25,8 +32,20 @@
     - Understand the current limitations of the field and be prepared to tackle bioinformatics challenges
 
 - url: https://github.com/Multiomics-Analytics-Group/course_graph_machine_learning
+  themes: [training, graph-ml]
+  title: Graph Machine Learning (DTU 27666 AI-guided Protein Science)
+  summary: >-
+    The graph machine learning module of the DTU course 27666 *AI-guided Protein Science*. It
+    introduces graph biology and how to turn biological data into graphs, graph machine learning
+    tasks and shallow embeddings (Node2Vec, DeepWalk) with PyTorch Geometric, and graph neural
+    networks for node- and graph-level prediction. Every session comes with a hands-on Google Colab notebook.
+  highlights:
+    - Represent biological data as graphs
+    - Learn node embeddings with Node2Vec and DeepWalk in PyTorch Geometric
+    - Build graph neural networks for node and graph prediction tasks
 
 - url: https://github.com/Multiomics-Analytics-Group/networks_to_study_microbes
+  themes: [training, microbes]
   # kept from the previous hand-written entry (not in the README)
   title: Networks to Study Microbes
   image: https://raw.githubusercontent.com/Multiomics-Analytics-Group/networks_to_study_microbes/main/figures/netmicrobes.png

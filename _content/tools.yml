@@ -9,17 +9,31 @@
 #   title, description (subtitle), summary (Markdown), highlights (list),
 #   image (URL or repo path), homepage, keywords (list), note,
 #   embed (URL or repo path of an HTML page shown in an iframe), embed_title,
-#   date (YYYY-MM-DD; default = repository creation date), hidden (true/false)
+#   date (YYYY-MM-DD; default = repository creation date), hidden (true/false),
+#   themes (list of home-page themes, ids from _data/home_themes.yml)
 
 - url: https://github.com/EBI-Metagenomics/mgnipy
+  themes: [data, microbes]
 
 - url: https://github.com/Multiomics-Analytics-Group/InstaNexus
+  themes: [generative]
 
 - url: https://github.com/Multiomics-Analytics-Group/prefer_ontology
+  themes: [knowledge-graphs, data]
 
 - url: https://github.com/Multiomics-Analytics-Group/ale-cooccurrence-mutual-exclusivity-nf
+  themes: [microbes]
+  description: Mutation QC and gene co-occurrence / mutual-exclusivity analysis of adaptive laboratory evolution data
+  summary: >-
+    A Nextflow pipeline that cleans adaptive laboratory evolution (ALE) mutation calls from
+    [ALEdb](https://aledb.org) into one table of endpoint mutations, removing starting-strain and
+    hypermutator mutations, applying frequency thresholds and harmonising gene names with STRING
+    aliases. It then builds a gene-by-endpoint matrix for each experiment and tests every gene pair
+    for **co-occurrence** and **mutual exclusivity** with both DISCOVER and Fisher's exact test,
+    highlighting candidate genetic interactions. Runs for *E. coli* and *P. putida* are included.
 
 - url: https://github.com/Multiomics-Analytics-Group/OrthoHPI2.0
+  themes: [microbes]
   # kept from the previous hand-written entry (not in the README)
   title: OrthoHPI 2.0
   description: Orthology-based Host-Parasite Protein-protein Interactions
