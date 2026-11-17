@@ -1,0 +1,3 @@
+# Repository admins are requested automatically as reviewers on every pull request.
+# Add more admins by appending their GitHub usernames, e.g.:  * @albsantosdel @another-admin
+* @albsantosdel
