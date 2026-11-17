@@ -1,0 +1,58 @@
+# Research themes shown on the home page (edit by hand).
+#
+# Publications, tools and courses are linked under a theme automatically when
+# their entry in _content/*.yml lists the theme id, e.g.  themes: [graph-ml]
+# `text` may contain simple HTML (<i>, <b>, <a>).
+
+- id: graph-ml
+  title: Graph representation learning & explainable AI
+  text: >-
+    We train graph neural networks on individual-specific microbial association
+    networks and interpret what drives their predictions. In inflammatory bowel
+    disease, this revealed a densely connected module of co-abundant
+    <i>Bacteroidales</i> whose associations, rather than abundance shifts, carry
+    the predictive signal.
+
+- id: knowledge-graphs
+  title: Knowledge graphs & semantic data
+  text: >-
+    From the Clinical Knowledge Graph, with close to 20 million nodes and 220 million
+    relationships linking clinical proteomics to biomedical knowledge, to the PREFER
+    ontology for precision fermentation, we build the structured knowledge that
+    AI needs to reason over biology.
+
+- id: generative
+  title: Generative & deep learning models for omics
+  text: >-
+    ABaCo combines a variational autoencoder with an adversarial discriminator to
+    integrate metagenomic studies, correcting technical heterogeneity while
+    preserving biological signal. InstaNexus couples AI-driven <i>de novo</i> peptide
+    sequencing with assembly to reconstruct full-length antibodies and nanobodies
+    directly from mass spectrometry data.
+
+- id: microbes
+  title: Microbiomes, pathogens & host interactions
+  text: >-
+    We study how microbes adapt and interact with their hosts: comparative genomics
+    of 66 clinically relevant skin fungi, host&ndash;parasite protein interaction
+    predictions across 46 parasites and four hosts, and statistical frameworks to
+    find candidate genetic interactions in adaptive laboratory evolution.
+
+- id: data
+  title: AI-ready data & autonomous laboratories
+  text: >-
+    Models are only as good as their data. We argue for data-centric AI, built on
+    curated repositories, consistent metadata and semantic standards, as the
+    foundation for autonomous virtual laboratories, and we build the tooling that
+    makes it practical.
+
+- id: training
+  title: Open science & training
+  text: >-
+    Our software, data and course materials are open. We teach multi-omics data
+    analysis, protein language models, graph machine learning and network
+    approaches to microbiology, so that these methods reach the people who
+    generate the data.
+  links:
+    - label: GitHub
+      url: https://github.com/Multiomics-Analytics-Group

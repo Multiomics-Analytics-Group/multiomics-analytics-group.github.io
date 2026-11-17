@@ -65,90 +65,30 @@ title: Home
 <section class="home-section">
   <h2>Research themes</h2>
   <div class="home-grid">
-
+  {%- for t in site.data.home_themes %}
+    {%- assign t_pubs = pubs | where_exp: "x", "x.themes contains t.id" -%}
+    {%- assign t_tools = tools | where_exp: "x", "x.themes contains t.id" -%}
+    {%- assign t_courses = courses | where_exp: "x", "x.themes contains t.id" %}
     <div class="home-card">
-      <h3>Graph representation learning &amp; explainable AI</h3>
-      <p>
-        We train graph neural networks on individual-specific microbial association
-        networks and interpret what drives their predictions. In inflammatory bowel
-        disease, this revealed a densely connected module of co-abundant
-        <i>Bacteroidales</i> whose associations, rather than abundance shifts, carry
-        the predictive signal.
-      </p>
-      <p class="home-refs"><a href="{{ base }}/research/#pub-10-64898-2026-10-27-762128">IBD graph neural networks</a></p>
-    </div>
-
-    <div class="home-card">
-      <h3>Knowledge graphs &amp; semantic data</h3>
-      <p>
-        From the Clinical Knowledge Graph, with close to 20 million nodes and 220 million
-        relationships linking clinical proteomics to biomedical knowledge, to the PREFER
-        ontology for precision fermentation, we build the structured knowledge that
-        AI needs to reason over biology.
-      </p>
+      <h3>{{ t.title | escape }}</h3>
+      <p>{{ t.text }}</p>
       <p class="home-refs">
-        <a href="{{ base }}/research/#pub-10-1038-s41587-021-01145-6">Clinical Knowledge Graph</a> &middot;
-        <a href="{{ base }}/research/#pub-10-1038-s41597-026-08099-x">PREFER</a> &middot;
-        <a href="{{ base }}/research/#pub-10-1016-j-biotechadv-2026-108864">Graph data science in fungal biotechnology</a>
+        {%- assign sep = "" -%}
+        {%- for x in t_pubs limit:4 -%}
+          {{ sep }}<a href="{{ base }}/research/#pub-{{ x.id }}">{% if x.short %}{{ x.short | escape }}{% else %}{{ x.title | split: ":" | first | truncate: 45 | escape }}{% endif %}</a>{% assign sep = " &middot; " %}
+        {%- endfor -%}
+        {%- for x in t_tools limit:3 -%}
+          {{ sep }}<a href="{{ base }}/tools/#tool-{{ x.id }}">{{ x.short | default: x.title | escape }}</a>{% assign sep = " &middot; " %}
+        {%- endfor -%}
+        {%- for x in t_courses limit:4 -%}
+          {{ sep }}<a href="{{ base }}/education/#course-{{ x.id }}">{{ x.short | default: x.title | split: " (" | first | escape }}</a>{% assign sep = " &middot; " %}
+        {%- endfor -%}
+        {%- for l in t.links -%}
+          {{ sep }}<a href="{{ l.url }}">{{ l.label | escape }}</a>{% assign sep = " &middot; " %}
+        {%- endfor -%}
       </p>
     </div>
-
-    <div class="home-card">
-      <h3>Generative &amp; deep learning models for omics</h3>
-      <p>
-        ABaCo combines a variational autoencoder with an adversarial discriminator to
-        integrate metagenomic studies, correcting technical heterogeneity while
-        preserving biological signal. InstaNexus couples AI-driven <i>de novo</i> peptide
-        sequencing with assembly to reconstruct full-length antibodies and nanobodies
-        directly from mass spectrometry data.
-      </p>
-      <p class="home-refs">
-        <a href="{{ base }}/research/#pub-10-1093-nar-gkag227">ABaCo</a> &middot;
-        <a href="{{ base }}/research/#pub-10-1016-j-mcpro-2026-101547">InstaNexus</a>
-      </p>
-    </div>
-
-    <div class="home-card">
-      <h3>Microbiomes, pathogens &amp; host interactions</h3>
-      <p>
-        We study how microbes adapt and interact with their hosts: comparative genomics
-        of 66 clinically relevant skin fungi, host&ndash;parasite protein interaction
-        predictions across 46 parasites and four hosts, and statistical frameworks to
-        find candidate genetic interactions in adaptive laboratory evolution.
-      </p>
-      <p class="home-refs">
-        <a href="{{ base }}/research/#pub-10-1038-s41467-026-74431-z">Skin fungi genomics</a> &middot;
-        <a href="{{ base }}/tools/#tool-multiomics-analytics-group-orthohpi2-0">OrthoHPI 2.0</a> &middot;
-        <a href="{{ base }}/research/#pub-10-64898-2026-11-12-766281">ALE genetic interactions</a>
-      </p>
-    </div>
-
-    <div class="home-card">
-      <h3>AI-ready data &amp; autonomous laboratories</h3>
-      <p>
-        Models are only as good as their data. We argue for data-centric AI, built on
-        curated repositories, consistent metadata and semantic standards, as the
-        foundation for autonomous virtual laboratories, and we build the tooling that
-        makes it practical.
-      </p>
-      <p class="home-refs">
-        <a href="{{ base }}/research/#pub-10-1016-j-copbio-2025-103434">Beyond the model</a> &middot;
-        <a href="{{ base }}/tools/#tool-ebi-metagenomics-mgnipy">MGni.py</a> &middot;
-        <a href="{{ base }}/research/#pub-10-1101-2025-03-05-641152">VueGen</a>
-      </p>
-    </div>
-
-    <div class="home-card">
-      <h3>Open science &amp; training</h3>
-      <p>
-        Our software, data and course materials are open. We teach multi-omics data
-        analysis, protein language models, AI-guided protein science and network
-        approaches to microbiology, so that these methods reach the people who
-        generate the data.
-      </p>
-      <p class="home-refs"><a href="{{ base }}/education/">Courses</a> &middot; <a href="https://github.com/Multiomics-Analytics-Group">GitHub</a></p>
-    </div>
-
+  {%- endfor %}
   </div>
 </section>
 
@@ -158,7 +98,7 @@ title: Home
     <li><b>Multimodal foundation models for biology.</b> Joint representations of sequence, structure, abundance, interaction networks and clinical context that transfer across cohorts, species and tasks.</li>
     <li><b>Explainable graph AI as a discovery engine.</b> From accurate predictions to testable hypotheses about interacting modules, pathways and mechanisms.</li>
     <li><b>Knowledge graphs meet large language models.</b> Grounding generative AI in curated biomedical knowledge for retrieval, reasoning and literature-scale curation.</li>
-    <li><b>Agentic, data-centric science.</b> AI agents working on FAIR, machine-actionable data to close the design&ndash;build&ndash;test&ndash;learn loop in biofoundries and translational research.</li>
+    <li><b>Agentic, data-centric science.</b> AI agents working on FAIR, machine-actionable data in translational research.</li>
     <li><b>Clinical translation.</b> Microbiome and proteomics models that stratify patients and point towards interventions.</li>
   </ul>
 </section>
