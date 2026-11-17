@@ -4,7 +4,7 @@ title: Education
 permalink: /education/
 ---
 
-The Multi-omics Network Analytics group and the Data Science Platform at [DTU Biosustain](https://www.biosustain.dtu.dk/) have come together to offer a diverse range of courses designed to empower students with essential data science skills and familiarize them with both internal and external tools we have developed.
+The Multi-omics Network Analytics group at [DTU Health Tech](https://www.healthtech.dtu.dk/) offers courses that give students and researchers hands-on skills in data science, machine learning and AI for biology, from multi-omics data analysis to graph machine learning and protein language models, together with the tools we have developed.
 
 We are strong advocates of open science, and as part of that commitment, we make sure to share all the course materials on our [GitHub repository](https://github.com/Multiomics-Analytics-Group). This means that you will have access to comprehensive resources that aim to enhance the learning experience.
 
