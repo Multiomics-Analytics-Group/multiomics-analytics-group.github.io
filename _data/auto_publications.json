@@ -68,6 +68,46 @@
     "featured": false
   },
   {
+    "id": "10-64898-2026-09-03-747733",
+    "url": "https://www.biorxiv.org/content/10.64898/2026.09.03.747733v1",
+    "doi": "10.64898/2026.09.03.747733",
+    "doi_url": "https://doi.org/10.64898/2026.09.03.747733",
+    "title": "Learning from tandem mass spectra at scale with a self-supervised foundation model for proteomics",
+    "authors": [
+      "Nieuwoudt M",
+      "Reverenna M",
+      "Patel D",
+      "Catzel R",
+      "Houngue IHJ",
+      "Daniel J",
+      "Eloff K",
+      "Santos A",
+      "Lopez Carranza N",
+      "Jenkins TP",
+      "Van Goey J",
+      "Kalogeropoulos K"
+    ],
+    "authors_str": "Nieuwoudt M, Reverenna M, Patel D, Catzel R, Houngue IHJ, Daniel J, Eloff K, Santos A, Lopez Carranza N, Jenkins TP, Van Goey J, Kalogeropoulos K",
+    "authors_short": "Nieuwoudt et al.",
+    "date": "2026-09-07",
+    "venue": "bioRxiv",
+    "abstract": "Mass spectrometry-based proteomics increasingly relies on machine learning, yet existing models are trained for defined supervised tasks such as peptide identification, de novo sequencing or fragment intensity prediction, limiting transfer across datasets, instruments and acquisition methods. Here we present InstaNovo-FM, a self-supervised foundation model for bottom-up proteomics trained to reconstruct masked regions of tandem mass spectra. We assemble a diverse training corpus spanning 1.63 billion MS/MS spectra and 184.6 million high-confidence annotations. We train an encoder-only transformer on the annotated tier using a physics-aware masked reconstruction objective. We demonstrate that the InstaNovo-FM embeddings encode fundamental experimental and biological properties, including fragmentation method, sequence properties and post-translational modifications, without requiring peptide labels. Furthermore, this foundation model directly enables diverse downstream applications, including de novo peptide sequencing, database-free identification and analytical run classification. InstaNovo-FM establishes a unified representation space for peptide fragmentation spectra, enabling robust transferability across the proteomics ecosystem.",
+    "license": "CC BY-NC",
+    "published_doi": null,
+    "image": "public/auto/publications/10-64898-2026-09-03-747733.jpg",
+    "image_source": "https://www.biorxiv.org/content/biorxiv/early/2026/09/07/2026.09.03.747733/F1.large.jpg",
+    "image_caption": "Figure 1",
+    "short": "InstaNovo-FM",
+    "themes": [
+      "generative"
+    ],
+    "year": "2026",
+    "abstract_html": "<p>Mass spectrometry-based proteomics increasingly relies on machine learning, yet existing models are trained for defined supervised tasks such as peptide identification, de novo sequencing or fragment intensity prediction, limiting transfer across datasets, instruments and acquisition methods. Here we present InstaNovo-FM, a self-supervised foundation model for bottom-up proteomics trained to reconstruct masked regions of tandem mass spectra. We assemble a diverse training corpus spanning 1.63 billion MS/MS spectra and 184.6 million high-confidence annotations. We train an encoder-only transformer on the annotated tier using a physics-aware masked reconstruction objective. We demonstrate that the InstaNovo-FM embeddings encode fundamental experimental and biological properties, including fragmentation method, sequence properties and post-translational modifications, without requiring peptide labels. Furthermore, this foundation model directly enables diverse downstream applications, including de novo peptide sequencing, database-free identification and analytical run classification. InstaNovo-FM establishes a unified representation space for peptide fragmentation spectra, enabling robust transferability across the proteomics ecosystem.</p>",
+    "source_url": "https://www.biorxiv.org/content/10.64898/2026.09.03.747733v1",
+    "source_hash": "7d3b59319bd7",
+    "featured": false
+  },
+  {
     "id": "10-1038-s41597-026-08099-x",
     "url": "https://www.nature.com/articles/s41597-026-08099-x",
     "doi": "10.1038/s41597-026-08099-x",
