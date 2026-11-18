@@ -20,6 +20,10 @@
 # - url: https://doi.org/10.1093/bioinformatics/btaxxxx
 #   image: public/assets/graphical_abstract.png
 
+- url: https://www.biorxiv.org/content/10.64898/2026.09.03.747733v1
+  short: InstaNovo-FM
+  themes: [generative]
+
 - url: https://www.biorxiv.org/content/10.64898/2026.11.12.766281v1
   short: ALE genetic interactions
   themes: [microbes]
